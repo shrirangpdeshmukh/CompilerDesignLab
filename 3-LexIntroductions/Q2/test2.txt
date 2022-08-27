@@ -1,0 +1,3 @@
+if a>12 then bcD=23.0E+10 else if THE>=45.04 then something<>34E10 else Q=123.45E-04
+
+if k=14 then c = 15;

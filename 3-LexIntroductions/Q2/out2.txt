@@ -1,0 +1,46 @@
+Token: 1,	Text: if,	Value: -1
+Whitespace
+Token: 4,	Text: a,	Value: -1
+Token: 6,	Text: >,	Value: 65
+Token: 5,	Text: 12,	Value: -1
+Whitespace
+Token: 2,	Text: then,	Value: -1
+Whitespace
+Token: 4,	Text: bcD,	Value: -1
+Token: 6,	Text: =,	Value: 63
+Token: 5,	Text: 23.0E+10,	Value: -1
+Whitespace
+Token: 3,	Text: else,	Value: -1
+Whitespace
+Token: 1,	Text: if,	Value: -1
+Whitespace
+Token: 4,	Text: THE,	Value: -1
+Token: 6,	Text: >=,	Value: 66
+Token: 5,	Text: 45.04,	Value: -1
+Whitespace
+Token: 2,	Text: then,	Value: -1
+Whitespace
+Token: 4,	Text: something,	Value: -1
+Token: 6,	Text: <>,	Value: 64
+Token: 5,	Text: 34E10,	Value: -1
+Whitespace
+Token: 3,	Text: else,	Value: -1
+Whitespace
+Token: 4,	Text: Q,	Value: -1
+Token: 6,	Text: =,	Value: 63
+Token: 5,	Text: 123.45E-04,	Value: -1
+Whitespace
+Token: 1,	Text: if,	Value: -1
+Whitespace
+Token: 4,	Text: k,	Value: -1
+Token: 6,	Text: =,	Value: 63
+Token: 5,	Text: 14,	Value: -1
+Whitespace
+Token: 2,	Text: then,	Value: -1
+Whitespace
+Token: 4,	Text: c,	Value: -1
+Whitespace
+Token: 6,	Text: =,	Value: 63
+Whitespace
+Token: 5,	Text: 15,	Value: -1
+ERROR: unknown token

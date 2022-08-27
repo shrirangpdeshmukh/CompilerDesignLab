@@ -1,0 +1,58 @@
+Token: 17,	Text: main(),	Value: -1
+Token: 14,	Text: {,	Value: 123
+Whitespace
+Token: 8,	Text: INT,	Value: -1
+Whitespace
+Token: 7,	Text: i,	Value: -1
+Token: 6,	Text: =,	Value: 61
+Token: 10,	Text: 0,	Value: -1
+Token: 14,	Text: ;,	Value: 59
+Whitespace
+Token: 8,	Text: INT,	Value: -1
+Whitespace
+Token: 7,	Text: total,	Value: -1
+Token: 6,	Text: =,	Value: 61
+Token: 10,	Text: 0,	Value: -1
+Token: 14,	Text: ;,	Value: 59
+Whitespace
+Token: 9,	Text: FLOAT,	Value: -1
+Whitespace
+Token: 7,	Text: count,	Value: -1
+Token: 14,	Text: ;,	Value: 59
+Whitespace
+Token: 16,	Text: read(count),	Value: 161
+Token: 14,	Text: ;,	Value: 59
+Whitespace
+Token: 13,	Text: for,	Value: 102
+Token: 14,	Text: (,	Value: 40
+Token: 7,	Text: i,	Value: -1
+Token: 6,	Text: =,	Value: 61
+Token: 10,	Text: 0,	Value: -1
+Token: 14,	Text: ;,	Value: 59
+Token: 7,	Text: i,	Value: -1
+Token: 4,	Text: <,	Value: 41
+Token: 10,	Text: 10,	Value: -1
+Token: 14,	Text: ;,	Value: 59
+Token: 7,	Text: i,	Value: -1
+Token: 5,	Text: ++,	Value: 51
+Token: 14,	Text: ),	Value: 41
+Whitespace
+Token: 14,	Text: {,	Value: 123
+Whitespace
+Token: 16,	Text: read(x),	Value: 161
+Token: 14,	Text: ;,	Value: 59
+Whitespace
+Token: 7,	Text: total,	Value: -1
+Token: 6,	Text: =,	Value: 61
+Whitespace
+Token: 7,	Text: total,	Value: -1
+Token: 5,	Text: +,	Value: 43
+Token: 7,	Text: x,	Value: -1
+Token: 14,	Text: ;,	Value: 59
+Whitespace
+Token: 14,	Text: },	Value: 125
+Whitespace
+Token: 16,	Text: print(total),	Value: 162
+Token: 14,	Text: ;,	Value: 59
+Token: 14,	Text: },	Value: 125
+Lines Read 12
