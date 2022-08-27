@@ -1,0 +1,14 @@
+Initial Production Rules
+Z -> Y
+A -> bAB | bBc | bAc | aCV | cDF | cEF
+B -> bcD | bcG
+
+
+Modified Production Rules
+Z -> Y
+A -> aCV | bM' | cN'
+B -> bcO'
+M' -> Bc | AP'
+N' -> DF | EF
+O' -> D | G
+P' -> B | c

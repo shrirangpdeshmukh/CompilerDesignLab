@@ -1,0 +1,35 @@
+Input string: x*2+y
+
+Current Input Position: x
+Parsing with E()
+Calling T() from E()
+Current Input Position: x
+Parsing with T()
+Calling F() from T()
+Current Input Position: x
+Parsing with F()
+Calling TPrime() from T()
+Current Input Position: *
+Parsing with TPrime()
+Calling F() from TPrime()
+Current Input Position: 2
+Parsing with F()
+Calling TPrime() from TPrime()
+Current Input Position: +
+Parsing with TPrime()
+Calling EPrime() from E()
+Current Input Position: +
+Parsing with EPrime()
+Calling T() from EPrime()
+Current Input Position: y
+Parsing with T()
+Calling F() from T()
+Current Input Position: y
+Parsing with F()
+Calling TPrime() from T()
+Current Input Position: $
+Parsing with TPrime()
+Calling EPrime() from EPrime()
+Current Input Position: $
+Parsing with EPrime()
+Successfully Parsed Expression

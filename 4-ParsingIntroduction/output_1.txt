@@ -1,0 +1,12 @@
+Initial Production Rules
+E -> E+T | T
+T -> T*F | F
+F -> (E) | id
+
+
+Modified Production Rules
+E -> TE'
+T -> FT'
+F -> (E) | id
+E' -> +TE' | #
+T' -> *FT' | #

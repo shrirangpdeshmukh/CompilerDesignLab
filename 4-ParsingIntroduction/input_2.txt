@@ -1,0 +1,4 @@
+3
+Z->Y
+A->bAB|bBc|bAc|aCV|cDF|cEF
+B->bcD|bcG
