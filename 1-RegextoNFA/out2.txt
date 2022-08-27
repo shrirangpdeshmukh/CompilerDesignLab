@@ -1,0 +1,9 @@
+Expression: a*.%
+Processed Expression: a*.%
+
+	Transition Table 
+_____________________________________
+Current State -	Input -> Next State
+_____________________________________
+S 4 |	
+No end node |	
