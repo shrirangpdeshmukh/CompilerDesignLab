@@ -1,0 +1,29 @@
+Non Terminals: B, C, D, E, F, G, H, I, J, K, A, L, M, N, O, P, Q, R, S, T, U, V, W, X, Y, Z
+Terminals: a, b, c, d, e, f, g, h, i, j, k, l, m, n, o, p, q, r, s, t, u, v, w, x, y, z, +, -, *, /, %
+Rules:
+A -> +EOp
+B -> KT
+C -> BU
+D -> QRm
+E -> # | DE
+F -> PV
+G -> hFi | q | r | v
+H -> rlFm
+I -> -r | zL
+J -> sC/OX
+K -> M | jCk | xK
+L -> * | F
+M -> FY
+N -> H | I | J | S
+O -> # | NO
+P -> GW
+Q -> t | w
+R -> rZ
+S -> %CuOp
+T -> # | nKT
+U -> # | yBU
+V -> # | aPV | bPV
+W -> # | GW | dGW
+X -> oOp | p
+Y -> eF | fF | gF
+Z -> # | R

@@ -1,0 +1,11 @@
+prog
+    int i;
+    int j;
+           
+    if i=2
+        then 
+            j:=3;
+        else 
+            j:=5;
+    end
+end

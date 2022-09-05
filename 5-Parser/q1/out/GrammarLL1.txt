@@ -1,0 +1,8 @@
+Non Terminals: E, T, F, M, N
+Terminals: +, *, (, ), i
+Rules:
+E -> TM
+F -> (E) | i
+M -> # | +TM
+N -> # | *FN
+T -> FN

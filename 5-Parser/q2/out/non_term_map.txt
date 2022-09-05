@@ -1,0 +1,20 @@
+AE	:	B
+BE	:	C
+D	:	D
+DL	:	E
+E	:	F
+ES	:	H
+F	:	G
+IOS	:	I
+IS	:	J
+NE	:	K
+P	:	A
+PE	:	L
+RE	:	M
+S	:	N
+SL	:	O
+T	:	P
+TY	:	Q
+VL	:	R
+WS	:	S
+

@@ -1,0 +1,6 @@
+Non Terminals: E, T, F
+Terminals: +, *, (, ), i
+Rules:
+E -> E+T | T
+F -> (E) | i
+T -> T*F | F
