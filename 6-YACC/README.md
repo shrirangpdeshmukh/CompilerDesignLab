@@ -1,6 +1,8 @@
 # Compiler Design - Assignment 7
 ## Shrirang Prashant Deshmukh | 19CS01065
 
+**Lexical analysis and parsing using Flex and Yacc**
+
 - Lex File - *parse.l* 
 - YACC File - *parse.y*
 
