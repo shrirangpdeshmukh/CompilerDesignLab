@@ -1,0 +1,1454 @@
+
+;; Function scanf (scanf, funcdef_no=2, decl_uid=2151, cgraph_uid=3, symbol_order=2)
+
+__attribute__((unused))
+__attribute__((nonnull (1), format (gnu_scanf, 1, 2)))
+int scanf (const char * __format)
+{
+  char * __local_argv;
+  int __retval;
+  int D.3273;
+  char * __local_argv.2_1;
+  struct FILE * _2;
+  int _10;
+
+;;   basic block 2, loop depth 0
+;;    pred:       ENTRY
+  __builtin_va_start (&__local_argv, 0);
+  __local_argv.2_1 = __local_argv;
+  _2 = __acrt_iob_func (0);
+  __retval_8 = __mingw_vfscanf (_2, __format_6(D), __local_argv.2_1);
+  __builtin_va_end (&__local_argv);
+  _10 = __retval_8;
+  __local_argv ={v} {CLOBBER(eol)};
+;;    succ:       3
+
+;;   basic block 3, loop depth 0
+;;    pred:       2
+<L1>:
+  return _10;
+;;    succ:       EXIT
+
+}
+
+
+
+Partition map 
+
+Partition 1 (__local_argv.2_1 - 1 )
+Partition 2 (_2 - 2 )
+Partition 6 (__format_6(D) - 6 )
+Partition 8 (__retval_8 - 8 )
+Partition 10 (_10 - 10 )
+Partition 12 (_12(D) - 12 )
+
+
+Coalescible Partition map 
+
+Partition 0, base 0 (__format_6(D) - 6 )
+Partition 1, base 1 (_12(D) - 12 )
+
+
+Partition map 
+
+Partition 0 (__format_6(D) - 6 )
+Partition 1 (_12(D) - 12 )
+
+
+Conflict graph:
+
+After sorting:
+Coalesce List:
+
+Partition map 
+
+Partition 0 (__format_6(D) - 6 )
+Partition 1 (_12(D) - 12 )
+
+After Coalescing:
+
+Partition map 
+
+Partition 0 (__local_argv.2_1 - 1 )
+Partition 1 (_2 - 2 )
+Partition 2 (__format_6(D) - 6 )
+Partition 3 (__retval_8 - 8 )
+Partition 4 (_10 - 10 )
+Partition 5 (_12(D) - 12 )
+
+__attribute__((unused))
+__attribute__((nonnull (1), format (gnu_scanf, 1, 2)))
+int scanf (const char * __format)
+{
+  char * __local_argv;
+  int __retval;
+  int D.3273;
+  char * __local_argv.2_1;
+  struct FILE * _2;
+  int _10;
+  int _12(D);
+
+;;   basic block 2, loop depth 0
+;;    pred:       ENTRY
+  __builtin_va_start (&__local_argv, 0);
+  __local_argv.2_1 = __local_argv;
+  _2 = __acrt_iob_func (0);
+  __retval_8 = __mingw_vfscanf (_2, __format_6(D), __local_argv.2_1);
+  __builtin_va_end (&__local_argv);
+  _10 = __retval_8;
+  __local_argv ={v} {CLOBBER(eol)};
+;;    succ:       3
+
+;;   basic block 3, loop depth 0
+;;    pred:       2
+<L1>:
+  return _10;
+;;    succ:       EXIT
+
+}
+
+
+
+;; Generating RTL for gimple basic block 2
+
+;; __builtin_va_start (&__local_argv, 0);
+
+(insn 9 8 10 (parallel [
+            (set (reg:DI 86)
+                (plus:DI (reg/f:DI 76 virtual-incoming-args)
+                    (const_int 8 [0x8])))
+            (clobber (reg:CC 17 flags))
+        ]) "C:/msys64/mingw64/include/stdio.h":304:35 -1
+     (nil))
+
+(insn 10 9 0 (set (mem/f/c:DI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                (const_int -16 [0xfffffffffffffff0])) [2 MEM[(char * *)&__local_argv]+0 S8 A128])
+        (reg:DI 86)) "C:/msys64/mingw64/include/stdio.h":304:35 -1
+     (nil))
+
+;; __local_argv.2_1 = __local_argv;
+
+(insn 11 10 0 (set (reg/f:DI 82 [ __local_argv.2_1 ])
+        (mem/f/c:DI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                (const_int -16 [0xfffffffffffffff0])) [2 __local_argv+0 S8 A128])) "C:/msys64/mingw64/include/stdio.h":305:14 -1
+     (nil))
+
+;; _2 = __acrt_iob_func (0);
+
+(insn 12 11 13 (set (reg:SI 2 cx)
+        (const_int 0 [0])) "C:/msys64/mingw64/include/stdio.h":305:14 -1
+     (nil))
+
+(insn 13 12 14 (set (reg:DI 87)
+        (mem/u/c:DI (symbol_ref:DI ("*__imp___acrt_iob_func") [flags 0x2002]  <var_decl 000000000397d750 D.3283>) [3  S8 A8])) "C:/msys64/mingw64/include/stdio.h":305:14 -1
+     (expr_list:REG_EQUAL (symbol_ref:DI ("__acrt_iob_func") [flags 0x441]  <function_decl 0000000003882800 __acrt_iob_func>)
+        (nil)))
+
+(call_insn 14 13 15 (set (reg:DI 0 ax)
+        (call (mem:QI (reg:DI 87) [0 __acrt_iob_func S1 A8])
+            (const_int 32 [0x20]))) "C:/msys64/mingw64/include/stdio.h":305:14 -1
+     (nil)
+    (expr_list:SI (use (reg:SI 2 cx))
+        (nil)))
+
+(insn 15 14 0 (set (reg/f:DI 83 [ _2 ])
+        (reg:DI 0 ax)) "C:/msys64/mingw64/include/stdio.h":305:14 -1
+     (nil))
+
+;; __retval_8 = __mingw_vfscanf (_2, __format_6(D), __local_argv.2_1);
+
+(insn 16 15 17 (set (reg:DI 88)
+        (mem/f/c:DI (reg/f:DI 76 virtual-incoming-args) [2 __format+0 S8 A64])) "C:/msys64/mingw64/include/stdio.h":305:14 -1
+     (nil))
+
+(insn 17 16 18 (set (reg:DI 36 r8)
+        (reg/f:DI 82 [ __local_argv.2_1 ])) "C:/msys64/mingw64/include/stdio.h":305:14 -1
+     (nil))
+
+(insn 18 17 19 (set (reg:DI 1 dx)
+        (reg:DI 88)) "C:/msys64/mingw64/include/stdio.h":305:14 -1
+     (nil))
+
+(insn 19 18 20 (set (reg:DI 2 cx)
+        (reg/f:DI 83 [ _2 ])) "C:/msys64/mingw64/include/stdio.h":305:14 -1
+     (nil))
+
+(call_insn 20 19 21 (set (reg:SI 0 ax)
+        (call (mem:QI (symbol_ref:DI ("__mingw_vfscanf") [flags 0x43]  <function_decl 00000000038aa100 __mingw_vfscanf>) [0 __mingw_vfscanf S1 A8])
+            (const_int 32 [0x20]))) "C:/msys64/mingw64/include/stdio.h":305:14 -1
+     (nil)
+    (expr_list:DI (use (reg:DI 2 cx))
+        (expr_list:DI (use (reg:DI 1 dx))
+            (expr_list:DI (use (reg:DI 36 r8))
+                (nil)))))
+
+(insn 21 20 22 (set (reg:SI 89)
+        (reg:SI 0 ax)) "C:/msys64/mingw64/include/stdio.h":305:14 -1
+     (nil))
+
+(insn 22 21 0 (set (mem/c:SI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                (const_int -4 [0xfffffffffffffffc])) [1 __retval+0 S4 A32])
+        (reg:SI 89)) "C:/msys64/mingw64/include/stdio.h":305:14 -1
+     (nil))
+
+;; __builtin_va_end (&__local_argv);
+
+(nil)
+
+;; _10 = __retval_8;
+
+(insn 23 22 0 (set (reg:SI 84 [ _10 ])
+        (mem/c:SI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                (const_int -4 [0xfffffffffffffffc])) [1 __retval+0 S4 A32])) "C:/msys64/mingw64/include/stdio.h":307:10 -1
+     (nil))
+
+;; __local_argv ={v} {CLOBBER(eol)};
+
+(nil)
+
+;; Generating RTL for gimple basic block 3
+
+;; <L1>:
+
+(code_label 24 23 25 2 (nil) [0 uses])
+
+(note 25 24 0 NOTE_INSN_BASIC_BLOCK)
+
+;; return _10;
+
+(insn 26 25 27 (set (reg:SI 85 [ <retval> ])
+        (reg:SI 84 [ _10 ])) "C:/msys64/mingw64/include/stdio.h":307:10 -1
+     (nil))
+
+(jump_insn 27 26 28 (set (pc)
+        (label_ref 0)) "C:/msys64/mingw64/include/stdio.h":307:10 -1
+     (nil))
+
+(barrier 28 27 0)
+
+
+try_optimize_cfg iteration 1
+
+Merging block 3 into block 2...
+Merged blocks 2 and 3.
+Merged 2 and 3 without moving.
+Merging block 4 into block 2...
+Merged blocks 2 and 4.
+Merged 2 and 4 without moving.
+Removing jump 27.
+Merging block 5 into block 2...
+Merged blocks 2 and 5.
+Merged 2 and 5 without moving.
+
+
+try_optimize_cfg iteration 2
+
+fix_loop_structure: fixing up loops for function
+
+
+;;
+;; Full RTL generated for this function:
+;;
+(note 1 0 7 NOTE_INSN_DELETED)
+;; basic block 2, loop depth 0, maybe hot
+;;  prev block 0, next block 1, flags: (NEW, REACHABLE, RTL)
+;;  pred:       ENTRY (FALLTHRU)
+(note 7 1 2 2 [bb 2] NOTE_INSN_BASIC_BLOCK)
+(insn 2 7 3 2 (set (mem/f/c:DI (reg/f:DI 76 virtual-incoming-args) [2 __format+0 S8 A64])
+        (reg:DI 2 cx [ __format ])) "C:/msys64/mingw64/include/stdio.h":302:1 -1
+     (nil))
+(insn 3 2 4 2 (set (mem/c:DI (plus:DI (reg/f:DI 76 virtual-incoming-args)
+                (const_int 8 [0x8])) [0  S8 A8])
+        (reg:DI 1 dx)) "C:/msys64/mingw64/include/stdio.h":302:1 -1
+     (nil))
+(insn 4 3 5 2 (set (mem/c:DI (plus:DI (reg/f:DI 76 virtual-incoming-args)
+                (const_int 16 [0x10])) [0  S8 A8])
+        (reg:DI 36 r8)) "C:/msys64/mingw64/include/stdio.h":302:1 -1
+     (nil))
+(insn 5 4 6 2 (set (mem/c:DI (plus:DI (reg/f:DI 76 virtual-incoming-args)
+                (const_int 24 [0x18])) [0  S8 A8])
+        (reg:DI 37 r9)) "C:/msys64/mingw64/include/stdio.h":302:1 -1
+     (nil))
+(note 6 5 9 2 NOTE_INSN_FUNCTION_BEG)
+(insn 9 6 10 2 (parallel [
+            (set (reg:DI 86)
+                (plus:DI (reg/f:DI 76 virtual-incoming-args)
+                    (const_int 8 [0x8])))
+            (clobber (reg:CC 17 flags))
+        ]) "C:/msys64/mingw64/include/stdio.h":304:35 -1
+     (nil))
+(insn 10 9 11 2 (set (mem/f/c:DI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                (const_int -16 [0xfffffffffffffff0])) [2 MEM[(char * *)&__local_argv]+0 S8 A128])
+        (reg:DI 86)) "C:/msys64/mingw64/include/stdio.h":304:35 -1
+     (nil))
+(insn 11 10 12 2 (set (reg/f:DI 82 [ __local_argv.2_1 ])
+        (mem/f/c:DI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                (const_int -16 [0xfffffffffffffff0])) [2 __local_argv+0 S8 A128])) "C:/msys64/mingw64/include/stdio.h":305:14 -1
+     (nil))
+(insn 12 11 13 2 (set (reg:SI 2 cx)
+        (const_int 0 [0])) "C:/msys64/mingw64/include/stdio.h":305:14 -1
+     (nil))
+(insn 13 12 14 2 (set (reg:DI 87)
+        (mem/u/c:DI (symbol_ref:DI ("*__imp___acrt_iob_func") [flags 0x2002]  <var_decl 000000000397d750 D.3283>) [3  S8 A8])) "C:/msys64/mingw64/include/stdio.h":305:14 -1
+     (expr_list:REG_EQUAL (symbol_ref:DI ("__acrt_iob_func") [flags 0x441]  <function_decl 0000000003882800 __acrt_iob_func>)
+        (nil)))
+(call_insn 14 13 15 2 (set (reg:DI 0 ax)
+        (call (mem:QI (reg:DI 87) [0 __acrt_iob_func S1 A8])
+            (const_int 32 [0x20]))) "C:/msys64/mingw64/include/stdio.h":305:14 -1
+     (nil)
+    (expr_list:SI (use (reg:SI 2 cx))
+        (nil)))
+(insn 15 14 16 2 (set (reg/f:DI 83 [ _2 ])
+        (reg:DI 0 ax)) "C:/msys64/mingw64/include/stdio.h":305:14 -1
+     (nil))
+(insn 16 15 17 2 (set (reg:DI 88)
+        (mem/f/c:DI (reg/f:DI 76 virtual-incoming-args) [2 __format+0 S8 A64])) "C:/msys64/mingw64/include/stdio.h":305:14 -1
+     (nil))
+(insn 17 16 18 2 (set (reg:DI 36 r8)
+        (reg/f:DI 82 [ __local_argv.2_1 ])) "C:/msys64/mingw64/include/stdio.h":305:14 -1
+     (nil))
+(insn 18 17 19 2 (set (reg:DI 1 dx)
+        (reg:DI 88)) "C:/msys64/mingw64/include/stdio.h":305:14 -1
+     (nil))
+(insn 19 18 20 2 (set (reg:DI 2 cx)
+        (reg/f:DI 83 [ _2 ])) "C:/msys64/mingw64/include/stdio.h":305:14 -1
+     (nil))
+(call_insn 20 19 21 2 (set (reg:SI 0 ax)
+        (call (mem:QI (symbol_ref:DI ("__mingw_vfscanf") [flags 0x43]  <function_decl 00000000038aa100 __mingw_vfscanf>) [0 __mingw_vfscanf S1 A8])
+            (const_int 32 [0x20]))) "C:/msys64/mingw64/include/stdio.h":305:14 -1
+     (nil)
+    (expr_list:DI (use (reg:DI 2 cx))
+        (expr_list:DI (use (reg:DI 1 dx))
+            (expr_list:DI (use (reg:DI 36 r8))
+                (nil)))))
+(insn 21 20 22 2 (set (reg:SI 89)
+        (reg:SI 0 ax)) "C:/msys64/mingw64/include/stdio.h":305:14 -1
+     (nil))
+(insn 22 21 23 2 (set (mem/c:SI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                (const_int -4 [0xfffffffffffffffc])) [1 __retval+0 S4 A32])
+        (reg:SI 89)) "C:/msys64/mingw64/include/stdio.h":305:14 -1
+     (nil))
+(insn 23 22 26 2 (set (reg:SI 84 [ _10 ])
+        (mem/c:SI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                (const_int -4 [0xfffffffffffffffc])) [1 __retval+0 S4 A32])) "C:/msys64/mingw64/include/stdio.h":307:10 -1
+     (nil))
+(insn 26 23 30 2 (set (reg:SI 85 [ <retval> ])
+        (reg:SI 84 [ _10 ])) "C:/msys64/mingw64/include/stdio.h":307:10 -1
+     (nil))
+(insn 30 26 31 2 (set (reg/i:SI 0 ax)
+        (reg:SI 85 [ <retval> ])) "C:/msys64/mingw64/include/stdio.h":308:1 -1
+     (nil))
+(insn 31 30 0 2 (use (reg/i:SI 0 ax)) "C:/msys64/mingw64/include/stdio.h":308:1 -1
+     (nil))
+;;  succ:       EXIT [always]  (FALLTHRU)
+
+
+;; Function printf (printf, funcdef_no=8, decl_uid=2182, cgraph_uid=9, symbol_order=8)
+
+__attribute__((unused))
+__attribute__((nonnull (1), format (gnu_printf, 1, 2)))
+int printf (const char * __format)
+{
+  char * __local_argv;
+  int __retval;
+  int D.3276;
+  char * __local_argv.3_1;
+  struct FILE * _2;
+  int _10;
+
+;;   basic block 2, loop depth 0
+;;    pred:       ENTRY
+  __builtin_va_start (&__local_argv, 0);
+  __local_argv.3_1 = __local_argv;
+  _2 = __acrt_iob_func (1);
+  __retval_8 = __mingw_vfprintf (_2, __format_6(D), __local_argv.3_1);
+  __builtin_va_end (&__local_argv);
+  _10 = __retval_8;
+  __local_argv ={v} {CLOBBER(eol)};
+;;    succ:       3
+
+;;   basic block 3, loop depth 0
+;;    pred:       2
+<L1>:
+  return _10;
+;;    succ:       EXIT
+
+}
+
+
+
+Partition map 
+
+Partition 1 (__local_argv.3_1 - 1 )
+Partition 2 (_2 - 2 )
+Partition 6 (__format_6(D) - 6 )
+Partition 8 (__retval_8 - 8 )
+Partition 10 (_10 - 10 )
+Partition 12 (_12(D) - 12 )
+
+
+Coalescible Partition map 
+
+Partition 0, base 0 (__format_6(D) - 6 )
+Partition 1, base 1 (_12(D) - 12 )
+
+
+Partition map 
+
+Partition 0 (__format_6(D) - 6 )
+Partition 1 (_12(D) - 12 )
+
+
+Conflict graph:
+
+After sorting:
+Coalesce List:
+
+Partition map 
+
+Partition 0 (__format_6(D) - 6 )
+Partition 1 (_12(D) - 12 )
+
+After Coalescing:
+
+Partition map 
+
+Partition 0 (__local_argv.3_1 - 1 )
+Partition 1 (_2 - 2 )
+Partition 2 (__format_6(D) - 6 )
+Partition 3 (__retval_8 - 8 )
+Partition 4 (_10 - 10 )
+Partition 5 (_12(D) - 12 )
+
+__attribute__((unused))
+__attribute__((nonnull (1), format (gnu_printf, 1, 2)))
+int printf (const char * __format)
+{
+  char * __local_argv;
+  int __retval;
+  int D.3276;
+  char * __local_argv.3_1;
+  struct FILE * _2;
+  int _10;
+  int _12(D);
+
+;;   basic block 2, loop depth 0
+;;    pred:       ENTRY
+  __builtin_va_start (&__local_argv, 0);
+  __local_argv.3_1 = __local_argv;
+  _2 = __acrt_iob_func (1);
+  __retval_8 = __mingw_vfprintf (_2, __format_6(D), __local_argv.3_1);
+  __builtin_va_end (&__local_argv);
+  _10 = __retval_8;
+  __local_argv ={v} {CLOBBER(eol)};
+;;    succ:       3
+
+;;   basic block 3, loop depth 0
+;;    pred:       2
+<L1>:
+  return _10;
+;;    succ:       EXIT
+
+}
+
+
+
+;; Generating RTL for gimple basic block 2
+
+;; __builtin_va_start (&__local_argv, 0);
+
+(insn 9 8 10 (parallel [
+            (set (reg:DI 86)
+                (plus:DI (reg/f:DI 76 virtual-incoming-args)
+                    (const_int 8 [0x8])))
+            (clobber (reg:CC 17 flags))
+        ]) "C:/msys64/mingw64/include/stdio.h":371:35 -1
+     (nil))
+
+(insn 10 9 0 (set (mem/f/c:DI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                (const_int -16 [0xfffffffffffffff0])) [2 MEM[(char * *)&__local_argv]+0 S8 A128])
+        (reg:DI 86)) "C:/msys64/mingw64/include/stdio.h":371:35 -1
+     (nil))
+
+;; __local_argv.3_1 = __local_argv;
+
+(insn 11 10 0 (set (reg/f:DI 82 [ __local_argv.3_1 ])
+        (mem/f/c:DI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                (const_int -16 [0xfffffffffffffff0])) [2 __local_argv+0 S8 A128])) "C:/msys64/mingw64/include/stdio.h":372:14 -1
+     (nil))
+
+;; _2 = __acrt_iob_func (1);
+
+(insn 12 11 13 (set (reg:SI 2 cx)
+        (const_int 1 [0x1])) "C:/msys64/mingw64/include/stdio.h":372:14 -1
+     (nil))
+
+(insn 13 12 14 (set (reg:DI 87)
+        (mem/u/c:DI (symbol_ref:DI ("*__imp___acrt_iob_func") [flags 0x2002]  <var_decl 000000000397d750 D.3283>) [3  S8 A8])) "C:/msys64/mingw64/include/stdio.h":372:14 -1
+     (expr_list:REG_EQUAL (symbol_ref:DI ("__acrt_iob_func") [flags 0x441]  <function_decl 0000000003882800 __acrt_iob_func>)
+        (nil)))
+
+(call_insn 14 13 15 (set (reg:DI 0 ax)
+        (call (mem:QI (reg:DI 87) [0 __acrt_iob_func S1 A8])
+            (const_int 32 [0x20]))) "C:/msys64/mingw64/include/stdio.h":372:14 -1
+     (nil)
+    (expr_list:SI (use (reg:SI 2 cx))
+        (nil)))
+
+(insn 15 14 0 (set (reg/f:DI 83 [ _2 ])
+        (reg:DI 0 ax)) "C:/msys64/mingw64/include/stdio.h":372:14 -1
+     (nil))
+
+;; __retval_8 = __mingw_vfprintf (_2, __format_6(D), __local_argv.3_1);
+
+(insn 16 15 17 (set (reg:DI 88)
+        (mem/f/c:DI (reg/f:DI 76 virtual-incoming-args) [2 __format+0 S8 A64])) "C:/msys64/mingw64/include/stdio.h":372:14 -1
+     (nil))
+
+(insn 17 16 18 (set (reg:DI 36 r8)
+        (reg/f:DI 82 [ __local_argv.3_1 ])) "C:/msys64/mingw64/include/stdio.h":372:14 -1
+     (nil))
+
+(insn 18 17 19 (set (reg:DI 1 dx)
+        (reg:DI 88)) "C:/msys64/mingw64/include/stdio.h":372:14 -1
+     (nil))
+
+(insn 19 18 20 (set (reg:DI 2 cx)
+        (reg/f:DI 83 [ _2 ])) "C:/msys64/mingw64/include/stdio.h":372:14 -1
+     (nil))
+
+(call_insn 20 19 21 (set (reg:SI 0 ax)
+        (call (mem:QI (symbol_ref:DI ("__mingw_vfprintf") [flags 0x43]  <function_decl 00000000038aa700 __mingw_vfprintf>) [0 __mingw_vfprintf S1 A8])
+            (const_int 32 [0x20]))) "C:/msys64/mingw64/include/stdio.h":372:14 -1
+     (expr_list:REG_EH_REGION (const_int 0 [0])
+        (nil))
+    (expr_list:DI (use (reg:DI 2 cx))
+        (expr_list:DI (use (reg:DI 1 dx))
+            (expr_list:DI (use (reg:DI 36 r8))
+                (nil)))))
+
+(insn 21 20 22 (set (reg:SI 89)
+        (reg:SI 0 ax)) "C:/msys64/mingw64/include/stdio.h":372:14 -1
+     (nil))
+
+(insn 22 21 0 (set (mem/c:SI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                (const_int -4 [0xfffffffffffffffc])) [1 __retval+0 S4 A32])
+        (reg:SI 89)) "C:/msys64/mingw64/include/stdio.h":372:14 -1
+     (nil))
+
+;; __builtin_va_end (&__local_argv);
+
+(nil)
+
+;; _10 = __retval_8;
+
+(insn 23 22 0 (set (reg:SI 84 [ _10 ])
+        (mem/c:SI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                (const_int -4 [0xfffffffffffffffc])) [1 __retval+0 S4 A32])) "C:/msys64/mingw64/include/stdio.h":374:10 -1
+     (nil))
+
+;; __local_argv ={v} {CLOBBER(eol)};
+
+(nil)
+
+;; Generating RTL for gimple basic block 3
+
+;; <L1>:
+
+(code_label 24 23 25 4 (nil) [0 uses])
+
+(note 25 24 0 NOTE_INSN_BASIC_BLOCK)
+
+;; return _10;
+
+(insn 26 25 27 (set (reg:SI 85 [ <retval> ])
+        (reg:SI 84 [ _10 ])) "C:/msys64/mingw64/include/stdio.h":374:10 -1
+     (nil))
+
+(jump_insn 27 26 28 (set (pc)
+        (label_ref 0)) "C:/msys64/mingw64/include/stdio.h":374:10 -1
+     (nil))
+
+(barrier 28 27 0)
+
+
+try_optimize_cfg iteration 1
+
+Merging block 3 into block 2...
+Merged blocks 2 and 3.
+Merged 2 and 3 without moving.
+Merging block 4 into block 2...
+Merged blocks 2 and 4.
+Merged 2 and 4 without moving.
+Removing jump 27.
+Merging block 5 into block 2...
+Merged blocks 2 and 5.
+Merged 2 and 5 without moving.
+
+
+try_optimize_cfg iteration 2
+
+fix_loop_structure: fixing up loops for function
+
+
+;;
+;; Full RTL generated for this function:
+;;
+(note 1 0 7 NOTE_INSN_DELETED)
+;; basic block 2, loop depth 0, maybe hot
+;;  prev block 0, next block 1, flags: (NEW, REACHABLE, RTL)
+;;  pred:       ENTRY (FALLTHRU)
+(note 7 1 2 2 [bb 2] NOTE_INSN_BASIC_BLOCK)
+(insn 2 7 3 2 (set (mem/f/c:DI (reg/f:DI 76 virtual-incoming-args) [2 __format+0 S8 A64])
+        (reg:DI 2 cx [ __format ])) "C:/msys64/mingw64/include/stdio.h":369:1 -1
+     (nil))
+(insn 3 2 4 2 (set (mem/c:DI (plus:DI (reg/f:DI 76 virtual-incoming-args)
+                (const_int 8 [0x8])) [0  S8 A8])
+        (reg:DI 1 dx)) "C:/msys64/mingw64/include/stdio.h":369:1 -1
+     (nil))
+(insn 4 3 5 2 (set (mem/c:DI (plus:DI (reg/f:DI 76 virtual-incoming-args)
+                (const_int 16 [0x10])) [0  S8 A8])
+        (reg:DI 36 r8)) "C:/msys64/mingw64/include/stdio.h":369:1 -1
+     (nil))
+(insn 5 4 6 2 (set (mem/c:DI (plus:DI (reg/f:DI 76 virtual-incoming-args)
+                (const_int 24 [0x18])) [0  S8 A8])
+        (reg:DI 37 r9)) "C:/msys64/mingw64/include/stdio.h":369:1 -1
+     (nil))
+(note 6 5 9 2 NOTE_INSN_FUNCTION_BEG)
+(insn 9 6 10 2 (parallel [
+            (set (reg:DI 86)
+                (plus:DI (reg/f:DI 76 virtual-incoming-args)
+                    (const_int 8 [0x8])))
+            (clobber (reg:CC 17 flags))
+        ]) "C:/msys64/mingw64/include/stdio.h":371:35 -1
+     (nil))
+(insn 10 9 11 2 (set (mem/f/c:DI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                (const_int -16 [0xfffffffffffffff0])) [2 MEM[(char * *)&__local_argv]+0 S8 A128])
+        (reg:DI 86)) "C:/msys64/mingw64/include/stdio.h":371:35 -1
+     (nil))
+(insn 11 10 12 2 (set (reg/f:DI 82 [ __local_argv.3_1 ])
+        (mem/f/c:DI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                (const_int -16 [0xfffffffffffffff0])) [2 __local_argv+0 S8 A128])) "C:/msys64/mingw64/include/stdio.h":372:14 -1
+     (nil))
+(insn 12 11 13 2 (set (reg:SI 2 cx)
+        (const_int 1 [0x1])) "C:/msys64/mingw64/include/stdio.h":372:14 -1
+     (nil))
+(insn 13 12 14 2 (set (reg:DI 87)
+        (mem/u/c:DI (symbol_ref:DI ("*__imp___acrt_iob_func") [flags 0x2002]  <var_decl 000000000397d750 D.3283>) [3  S8 A8])) "C:/msys64/mingw64/include/stdio.h":372:14 -1
+     (expr_list:REG_EQUAL (symbol_ref:DI ("__acrt_iob_func") [flags 0x441]  <function_decl 0000000003882800 __acrt_iob_func>)
+        (nil)))
+(call_insn 14 13 15 2 (set (reg:DI 0 ax)
+        (call (mem:QI (reg:DI 87) [0 __acrt_iob_func S1 A8])
+            (const_int 32 [0x20]))) "C:/msys64/mingw64/include/stdio.h":372:14 -1
+     (nil)
+    (expr_list:SI (use (reg:SI 2 cx))
+        (nil)))
+(insn 15 14 16 2 (set (reg/f:DI 83 [ _2 ])
+        (reg:DI 0 ax)) "C:/msys64/mingw64/include/stdio.h":372:14 -1
+     (nil))
+(insn 16 15 17 2 (set (reg:DI 88)
+        (mem/f/c:DI (reg/f:DI 76 virtual-incoming-args) [2 __format+0 S8 A64])) "C:/msys64/mingw64/include/stdio.h":372:14 -1
+     (nil))
+(insn 17 16 18 2 (set (reg:DI 36 r8)
+        (reg/f:DI 82 [ __local_argv.3_1 ])) "C:/msys64/mingw64/include/stdio.h":372:14 -1
+     (nil))
+(insn 18 17 19 2 (set (reg:DI 1 dx)
+        (reg:DI 88)) "C:/msys64/mingw64/include/stdio.h":372:14 -1
+     (nil))
+(insn 19 18 20 2 (set (reg:DI 2 cx)
+        (reg/f:DI 83 [ _2 ])) "C:/msys64/mingw64/include/stdio.h":372:14 -1
+     (nil))
+(call_insn 20 19 21 2 (set (reg:SI 0 ax)
+        (call (mem:QI (symbol_ref:DI ("__mingw_vfprintf") [flags 0x43]  <function_decl 00000000038aa700 __mingw_vfprintf>) [0 __mingw_vfprintf S1 A8])
+            (const_int 32 [0x20]))) "C:/msys64/mingw64/include/stdio.h":372:14 -1
+     (expr_list:REG_EH_REGION (const_int 0 [0])
+        (nil))
+    (expr_list:DI (use (reg:DI 2 cx))
+        (expr_list:DI (use (reg:DI 1 dx))
+            (expr_list:DI (use (reg:DI 36 r8))
+                (nil)))))
+(insn 21 20 22 2 (set (reg:SI 89)
+        (reg:SI 0 ax)) "C:/msys64/mingw64/include/stdio.h":372:14 -1
+     (nil))
+(insn 22 21 23 2 (set (mem/c:SI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                (const_int -4 [0xfffffffffffffffc])) [1 __retval+0 S4 A32])
+        (reg:SI 89)) "C:/msys64/mingw64/include/stdio.h":372:14 -1
+     (nil))
+(insn 23 22 26 2 (set (reg:SI 84 [ _10 ])
+        (mem/c:SI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                (const_int -4 [0xfffffffffffffffc])) [1 __retval+0 S4 A32])) "C:/msys64/mingw64/include/stdio.h":374:10 -1
+     (nil))
+(insn 26 23 30 2 (set (reg:SI 85 [ <retval> ])
+        (reg:SI 84 [ _10 ])) "C:/msys64/mingw64/include/stdio.h":374:10 -1
+     (nil))
+(insn 30 26 31 2 (set (reg/i:SI 0 ax)
+        (reg:SI 85 [ <retval> ])) "C:/msys64/mingw64/include/stdio.h":375:1 -1
+     (nil))
+(insn 31 30 0 2 (use (reg/i:SI 0 ax)) "C:/msys64/mingw64/include/stdio.h":375:1 -1
+     (nil))
+;;  succ:       EXIT [always]  (FALLTHRU)
+
+
+;; Function fact (fact, funcdef_no=29, decl_uid=3253, cgraph_uid=30, symbol_order=29)
+
+int fact (int n)
+{
+  int j;
+  int i;
+  int D.3268;
+  int _6;
+
+;;   basic block 2, loop depth 0
+;;    pred:       ENTRY
+  j_3 = 1;
+  i_4 = 1;
+  goto <bb 4>; [INV]
+;;    succ:       4
+
+;;   basic block 3, loop depth 1
+;;    pred:       4
+  j_8 = j_2 * i_1;
+  i_9 = i_1 + 1;
+;;    succ:       4
+
+;;   basic block 4, loop depth 1
+;;    pred:       2
+;;                3
+  # i_1 = PHI <i_4(2), i_9(3)>
+  # j_2 = PHI <j_3(2), j_8(3)>
+  if (i_1 <= n_5(D))
+    goto <bb 3>; [INV]
+  else
+    goto <bb 5>; [INV]
+;;    succ:       3
+;;                5
+
+;;   basic block 5, loop depth 0
+;;    pred:       4
+  _6 = j_2;
+;;    succ:       6
+
+;;   basic block 6, loop depth 0
+;;    pred:       5
+<L3>:
+  return _6;
+;;    succ:       EXIT
+
+}
+
+
+
+Partition map 
+
+Partition 1 (i_1 - 1 )
+Partition 2 (j_2 - 2 )
+Partition 3 (j_3 - 3 )
+Partition 4 (i_4 - 4 )
+Partition 5 (n_5(D) - 5 )
+Partition 6 (_6 - 6 )
+Partition 8 (j_8 - 8 )
+Partition 9 (i_9 - 9 )
+Partition 10 (_10(D) - 10 )
+
+
+Coalescible Partition map 
+
+Partition 0, base 0 (i_1 - 1 4 9 )
+Partition 1, base 1 (j_2 - 2 3 8 )
+Partition 4, base 2 (n_5(D) - 5 )
+Partition 7, base 3 (_10(D) - 10 )
+
+
+Partition map 
+
+Partition 0 (i_1 - 1 )
+Partition 1 (j_2 - 2 )
+Partition 2 (j_3 - 3 )
+Partition 3 (i_4 - 4 )
+Partition 4 (n_5(D) - 5 )
+Partition 5 (j_8 - 8 )
+Partition 6 (i_9 - 9 )
+Partition 7 (_10(D) - 10 )
+
+
+Conflict graph:
+
+After sorting:
+Sorted Coalesce list:
+(2147483646, 0) i_1 <-> i_4
+(2147483646, 0) i_1 <-> i_9
+(2147483646, 0) j_2 <-> j_3
+(2147483646, 0) j_2 <-> j_8
+
+Partition map 
+
+Partition 0 (i_1 - 1 )
+Partition 1 (j_2 - 2 )
+Partition 2 (j_3 - 3 )
+Partition 3 (i_4 - 4 )
+Partition 4 (n_5(D) - 5 )
+Partition 5 (j_8 - 8 )
+Partition 6 (i_9 - 9 )
+Partition 7 (_10(D) - 10 )
+
+Coalesce list: (1)i_1 & (4)i_4 [map: 0, 3] : Success -> 0
+Coalesce list: (1)i_1 & (9)i_9 [map: 0, 6] : Success -> 0
+Coalesce list: (2)j_2 & (3)j_3 [map: 1, 2] : Success -> 1
+Coalesce list: (2)j_2 & (8)j_8 [map: 1, 5] : Success -> 1
+After Coalescing:
+
+Partition map 
+
+Partition 0 (i_1 - 1 4 9 )
+Partition 1 (j_2 - 2 3 8 )
+Partition 2 (n_5(D) - 5 )
+Partition 3 (_6 - 6 )
+Partition 4 (_10(D) - 10 )
+
+int fact (int n)
+{
+  int j;
+  int i;
+  int D.3268;
+  int _6;
+  int _10(D);
+
+;;   basic block 2, loop depth 0
+;;    pred:       ENTRY
+  j_3 = 1;
+  i_4 = 1;
+  goto <bb 4>; [INV]
+;;    succ:       4
+
+;;   basic block 3, loop depth 1
+;;    pred:       4
+  j_8 = j_2 * i_1;
+  i_9 = i_1 + 1;
+;;    succ:       4
+
+;;   basic block 4, loop depth 1
+;;    pred:       2
+;;                3
+  # i_1 = PHI <i_4(2), i_9(3)>
+  # j_2 = PHI <j_3(2), j_8(3)>
+  if (i_1 <= n_5(D))
+    goto <bb 3>; [INV]
+  else
+    goto <bb 5>; [INV]
+;;    succ:       3
+;;                5
+
+;;   basic block 5, loop depth 0
+;;    pred:       4
+  _6 = j_2;
+;;    succ:       6
+
+;;   basic block 6, loop depth 0
+;;    pred:       5
+<L3>:
+  return _6;
+;;    succ:       EXIT
+
+}
+
+
+
+;; Generating RTL for gimple basic block 2
+
+;; j_3 = 1;
+
+(insn 6 5 0 (set (mem/c:SI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                (const_int -8 [0xfffffffffffffff8])) [1 j+0 S4 A64])
+        (const_int 1 [0x1])) ".\..\a.c":5:12 -1
+     (nil))
+
+;; i_4 = 1;
+
+(insn 7 6 0 (set (mem/c:SI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                (const_int -4 [0xfffffffffffffffc])) [1 i+0 S4 A32])
+        (const_int 1 [0x1])) ".\..\a.c":6:12 -1
+     (nil))
+
+;; Generating RTL for gimple basic block 3
+
+;; j_8 = j_2 * i_1;
+
+(insn 11 10 12 (set (reg:SI 85)
+        (mem/c:SI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                (const_int -8 [0xfffffffffffffff8])) [1 j+0 S4 A64])) ".\..\a.c":8:11 -1
+     (nil))
+
+(insn 12 11 13 (parallel [
+            (set (reg:SI 84)
+                (mult:SI (reg:SI 85)
+                    (mem/c:SI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                            (const_int -4 [0xfffffffffffffffc])) [1 i+0 S4 A32])))
+            (clobber (reg:CC 17 flags))
+        ]) ".\..\a.c":8:11 -1
+     (nil))
+
+(insn 13 12 0 (set (mem/c:SI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                (const_int -8 [0xfffffffffffffff8])) [1 j+0 S4 A64])
+        (reg:SI 84)) ".\..\a.c":8:11 -1
+     (nil))
+
+;; i_9 = i_1 + 1;
+
+(insn 14 13 0 (parallel [
+            (set (mem/c:SI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                        (const_int -4 [0xfffffffffffffffc])) [1 i+0 S4 A32])
+                (plus:SI (mem/c:SI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                            (const_int -4 [0xfffffffffffffffc])) [1 i+0 S4 A32])
+                    (const_int 1 [0x1])))
+            (clobber (reg:CC 17 flags))
+        ]) ".\..\a.c":6:26 -1
+     (nil))
+
+;; Generating RTL for gimple basic block 4
+
+;; 
+
+(code_label 15 14 16 6 (nil) [0 uses])
+
+(note 16 15 0 NOTE_INSN_BASIC_BLOCK)
+
+;; if (i_1 <= n_5(D))
+
+(insn 18 16 19 (set (reg:SI 86)
+        (mem/c:SI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                (const_int -4 [0xfffffffffffffffc])) [1 i+0 S4 A32])) ".\..\a.c":6:19 -1
+     (nil))
+
+(insn 19 18 20 (set (reg:CCGC 17 flags)
+        (compare:CCGC (reg:SI 86)
+            (mem/c:SI (reg/f:DI 76 virtual-incoming-args) [1 n+0 S4 A64]))) ".\..\a.c":6:19 -1
+     (nil))
+
+(jump_insn 20 19 0 (set (pc)
+        (if_then_else (le (reg:CCGC 17 flags)
+                (const_int 0 [0]))
+            (label_ref 17)
+            (pc))) ".\..\a.c":6:19 -1
+     (nil))
+
+;; Generating RTL for gimple basic block 5
+
+;; _6 = j_2;
+
+(insn 22 21 0 (set (reg:SI 82 [ _6 ])
+        (mem/c:SI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                (const_int -8 [0xfffffffffffffff8])) [1 j+0 S4 A64])) ".\..\a.c":10:12 -1
+     (nil))
+
+;; Generating RTL for gimple basic block 6
+
+;; <L3>:
+
+(code_label 23 22 24 8 (nil) [0 uses])
+
+(note 24 23 0 NOTE_INSN_BASIC_BLOCK)
+
+;; return _6;
+
+(insn 25 24 26 (set (reg:SI 83 [ <retval> ])
+        (reg:SI 82 [ _6 ])) ".\..\a.c":10:12 -1
+     (nil))
+
+(jump_insn 26 25 27 (set (pc)
+        (label_ref 0)) ".\..\a.c":10:12 -1
+     (nil))
+
+(barrier 27 26 0)
+
+
+try_optimize_cfg iteration 1
+
+Merging block 3 into block 2...
+Merged blocks 2 and 3.
+Merged 2 and 3 without moving.
+Merging block 7 into block 6...
+Merged blocks 6 and 7.
+Merged 6 and 7 without moving.
+Removing jump 26.
+Merging block 8 into block 6...
+Merged blocks 6 and 8.
+Merged 6 and 8 without moving.
+
+
+try_optimize_cfg iteration 2
+
+fix_loop_structure: fixing up loops for function
+
+
+;;
+;; Full RTL generated for this function:
+;;
+(note 1 0 4 NOTE_INSN_DELETED)
+;; basic block 2, loop depth 0, maybe hot
+;;  prev block 0, next block 4, flags: (NEW, REACHABLE, RTL)
+;;  pred:       ENTRY (FALLTHRU)
+(note 4 1 2 2 [bb 2] NOTE_INSN_BASIC_BLOCK)
+(insn 2 4 3 2 (set (mem/c:SI (reg/f:DI 76 virtual-incoming-args) [1 n+0 S4 A64])
+        (reg:SI 2 cx [ n ])) ".\..\a.c":4:1 -1
+     (nil))
+(note 3 2 6 2 NOTE_INSN_FUNCTION_BEG)
+(insn 6 3 7 2 (set (mem/c:SI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                (const_int -8 [0xfffffffffffffff8])) [1 j+0 S4 A64])
+        (const_int 1 [0x1])) ".\..\a.c":5:12 -1
+     (nil))
+(insn 7 6 8 2 (set (mem/c:SI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                (const_int -4 [0xfffffffffffffffc])) [1 i+0 S4 A32])
+        (const_int 1 [0x1])) ".\..\a.c":6:12 -1
+     (nil))
+(jump_insn 8 7 9 2 (set (pc)
+        (label_ref 15)) ".\..\a.c":6:5 -1
+     (nil)
+ -> 15)
+;;  succ:       5 .\..\a.c:6:5
+
+(barrier 9 8 17)
+;; basic block 4, loop depth 1, maybe hot
+;;  prev block 2, next block 5, flags: (NEW, REACHABLE, RTL)
+;;  pred:       5
+(code_label 17 9 10 4 7 (nil) [1 uses])
+(note 10 17 11 4 [bb 4] NOTE_INSN_BASIC_BLOCK)
+(insn 11 10 12 4 (set (reg:SI 85)
+        (mem/c:SI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                (const_int -8 [0xfffffffffffffff8])) [1 j+0 S4 A64])) ".\..\a.c":8:11 -1
+     (nil))
+(insn 12 11 13 4 (parallel [
+            (set (reg:SI 84)
+                (mult:SI (reg:SI 85)
+                    (mem/c:SI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                            (const_int -4 [0xfffffffffffffffc])) [1 i+0 S4 A32])))
+            (clobber (reg:CC 17 flags))
+        ]) ".\..\a.c":8:11 -1
+     (nil))
+(insn 13 12 14 4 (set (mem/c:SI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                (const_int -8 [0xfffffffffffffff8])) [1 j+0 S4 A64])
+        (reg:SI 84)) ".\..\a.c":8:11 -1
+     (nil))
+(insn 14 13 15 4 (parallel [
+            (set (mem/c:SI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                        (const_int -4 [0xfffffffffffffffc])) [1 i+0 S4 A32])
+                (plus:SI (mem/c:SI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                            (const_int -4 [0xfffffffffffffffc])) [1 i+0 S4 A32])
+                    (const_int 1 [0x1])))
+            (clobber (reg:CC 17 flags))
+        ]) ".\..\a.c":6:26 -1
+     (nil))
+;;  succ:       5 (FALLTHRU,DFS_BACK)
+
+;; basic block 5, loop depth 1, maybe hot
+;;  prev block 4, next block 6, flags: (NEW, REACHABLE, RTL)
+;;  pred:       2 .\..\a.c:6:5
+;;              4 (FALLTHRU,DFS_BACK)
+(code_label 15 14 16 5 6 (nil) [1 uses])
+(note 16 15 18 5 [bb 5] NOTE_INSN_BASIC_BLOCK)
+(insn 18 16 19 5 (set (reg:SI 86)
+        (mem/c:SI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                (const_int -4 [0xfffffffffffffffc])) [1 i+0 S4 A32])) ".\..\a.c":6:19 -1
+     (nil))
+(insn 19 18 20 5 (set (reg:CCGC 17 flags)
+        (compare:CCGC (reg:SI 86)
+            (mem/c:SI (reg/f:DI 76 virtual-incoming-args) [1 n+0 S4 A64]))) ".\..\a.c":6:19 -1
+     (nil))
+(jump_insn 20 19 21 5 (set (pc)
+        (if_then_else (le (reg:CCGC 17 flags)
+                (const_int 0 [0]))
+            (label_ref 17)
+            (pc))) ".\..\a.c":6:19 -1
+     (nil)
+ -> 17)
+;;  succ:       4
+;;              6 (FALLTHRU)
+
+;; basic block 6, loop depth 0, maybe hot
+;;  prev block 5, next block 1, flags: (NEW, REACHABLE, RTL)
+;;  pred:       5 (FALLTHRU)
+(note 21 20 22 6 [bb 6] NOTE_INSN_BASIC_BLOCK)
+(insn 22 21 25 6 (set (reg:SI 82 [ _6 ])
+        (mem/c:SI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                (const_int -8 [0xfffffffffffffff8])) [1 j+0 S4 A64])) ".\..\a.c":10:12 -1
+     (nil))
+(insn 25 22 29 6 (set (reg:SI 83 [ <retval> ])
+        (reg:SI 82 [ _6 ])) ".\..\a.c":10:12 -1
+     (nil))
+(insn 29 25 30 6 (set (reg/i:SI 0 ax)
+        (reg:SI 83 [ <retval> ])) ".\..\a.c":11:1 -1
+     (nil))
+(insn 30 29 0 6 (use (reg/i:SI 0 ax)) ".\..\a.c":11:1 -1
+     (nil))
+;;  succ:       EXIT [always]  (FALLTHRU)
+
+
+;; Function main (main, funcdef_no=30, decl_uid=3263, cgraph_uid=31, symbol_order=30)
+
+int main (int argc, char * * argv)
+{
+  int res;
+  int n;
+  int D.3270;
+  int n.0_1;
+  int n.1_2;
+  int _8;
+
+;;   basic block 2, loop depth 0
+;;    pred:       ENTRY
+  scanf ("%d", &n);
+  n.0_1 = n;
+  res_6 = fact (n.0_1);
+  n.1_2 = n;
+  printf ("Value of fact(%d): %d\n", n.1_2, res_6);
+  _8 = 0;
+  n ={v} {CLOBBER(eol)};
+;;    succ:       3
+
+;;   basic block 3, loop depth 0
+;;    pred:       2
+<L1>:
+  return _8;
+;;    succ:       EXIT
+
+}
+
+
+
+Partition map 
+
+Partition 1 (n.0_1 - 1 )
+Partition 2 (n.1_2 - 2 )
+Partition 6 (res_6 - 6 )
+Partition 8 (_8 - 8 )
+Partition 10 (argc_10(D) - 10 )
+Partition 11 (argv_11(D) - 11 )
+Partition 12 (_12(D) - 12 )
+
+
+Coalescible Partition map 
+
+Partition 0, base 0 (argc_10(D) - 10 )
+Partition 1, base 1 (argv_11(D) - 11 )
+Partition 2, base 2 (_12(D) - 12 )
+
+
+Partition map 
+
+Partition 0 (argc_10(D) - 10 )
+Partition 1 (argv_11(D) - 11 )
+Partition 2 (_12(D) - 12 )
+
+
+Conflict graph:
+
+After sorting:
+Coalesce List:
+
+Partition map 
+
+Partition 0 (argc_10(D) - 10 )
+Partition 1 (argv_11(D) - 11 )
+Partition 2 (_12(D) - 12 )
+
+After Coalescing:
+
+Partition map 
+
+Partition 0 (n.0_1 - 1 )
+Partition 1 (n.1_2 - 2 )
+Partition 2 (res_6 - 6 )
+Partition 3 (_8 - 8 )
+Partition 4 (argc_10(D) - 10 )
+Partition 5 (argv_11(D) - 11 )
+Partition 6 (_12(D) - 12 )
+
+int main (int argc, char * * argv)
+{
+  int res;
+  int n;
+  int D.3270;
+  int n.0_1;
+  int n.1_2;
+  int _8;
+  int _12(D);
+
+;;   basic block 2, loop depth 0
+;;    pred:       ENTRY
+  scanf ("%d", &n);
+  n.0_1 = n;
+  res_6 = fact (n.0_1);
+  n.1_2 = n;
+  printf ("Value of fact(%d): %d\n", n.1_2, res_6);
+  _8 = 0;
+  n ={v} {CLOBBER(eol)};
+;;    succ:       3
+
+;;   basic block 3, loop depth 0
+;;    pred:       2
+<L1>:
+  return _8;
+;;    succ:       EXIT
+
+}
+
+
+
+;; Generating RTL for gimple basic block 2
+
+;; scanf ("%d", &n);
+
+(insn 8 7 9 (parallel [
+            (set (reg:DI 86)
+                (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                    (const_int -8 [0xfffffffffffffff8])))
+            (clobber (reg:CC 17 flags))
+        ]) ".\..\a.c":16:5 -1
+     (nil))
+
+(insn 9 8 10 (set (reg:DI 1 dx)
+        (reg:DI 86)) ".\..\a.c":16:5 -1
+     (nil))
+
+(insn 10 9 11 (set (reg:DI 87)
+        (symbol_ref/f:DI ("*.LC0") [flags 0x2]  <var_decl 000000000397d7e0 *.LC0>)) ".\..\a.c":16:5 -1
+     (nil))
+
+(insn 11 10 12 (set (reg:DI 2 cx)
+        (reg:DI 87)) ".\..\a.c":16:5 -1
+     (expr_list:REG_EQUAL (symbol_ref/f:DI ("*.LC0") [flags 0x2]  <var_decl 000000000397d7e0 *.LC0>)
+        (nil)))
+
+(call_insn 12 11 0 (set (reg:SI 0 ax)
+        (call (mem:QI (symbol_ref:DI ("scanf") [flags 0x3]  <function_decl 00000000038b3700 scanf>) [0 scanf S1 A8])
+            (const_int 32 [0x20]))) ".\..\a.c":16:5 -1
+     (nil)
+    (expr_list:DI (use (reg:DI 2 cx))
+        (expr_list:DI (use (reg:DI 1 dx))
+            (nil))))
+
+;; n.0_1 = n;
+
+(insn 13 12 0 (set (reg:SI 82 [ n.0_1 ])
+        (mem/c:SI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                (const_int -8 [0xfffffffffffffff8])) [1 n+0 S4 A64])) ".\..\a.c":17:11 -1
+     (nil))
+
+;; res_6 = fact (n.0_1);
+
+(insn 14 13 15 (set (reg:SI 2 cx)
+        (reg:SI 82 [ n.0_1 ])) ".\..\a.c":17:11 -1
+     (nil))
+
+(call_insn 15 14 16 (set (reg:SI 0 ax)
+        (call (mem:QI (symbol_ref:DI ("fact") [flags 0x3]  <function_decl 0000000003962e00 fact>) [0 fact S1 A8])
+            (const_int 32 [0x20]))) ".\..\a.c":17:11 -1
+     (nil)
+    (expr_list:SI (use (reg:SI 2 cx))
+        (nil)))
+
+(insn 16 15 17 (set (reg:SI 88)
+        (reg:SI 0 ax)) ".\..\a.c":17:11 -1
+     (nil))
+
+(insn 17 16 0 (set (mem/c:SI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                (const_int -4 [0xfffffffffffffffc])) [1 res+0 S4 A32])
+        (reg:SI 88)) ".\..\a.c":17:11 -1
+     (nil))
+
+;; n.1_2 = n;
+
+(insn 18 17 0 (set (reg:SI 83 [ n.1_2 ])
+        (mem/c:SI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                (const_int -8 [0xfffffffffffffff8])) [1 n+0 S4 A64])) ".\..\a.c":19:5 -1
+     (nil))
+
+;; printf ("Value of fact(%d): %d\n", n.1_2, res_6);
+
+(insn 19 18 20 (set (reg:SI 89)
+        (mem/c:SI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                (const_int -4 [0xfffffffffffffffc])) [1 res+0 S4 A32])) ".\..\a.c":19:5 -1
+     (nil))
+
+(insn 20 19 21 (set (reg:SI 36 r8)
+        (reg:SI 89)) ".\..\a.c":19:5 -1
+     (nil))
+
+(insn 21 20 22 (set (reg:SI 1 dx)
+        (reg:SI 83 [ n.1_2 ])) ".\..\a.c":19:5 -1
+     (nil))
+
+(insn 22 21 23 (set (reg:DI 90)
+        (symbol_ref/f:DI ("*.LC1") [flags 0x2]  <var_decl 000000000397d870 *.LC1>)) ".\..\a.c":19:5 -1
+     (nil))
+
+(insn 23 22 24 (set (reg:DI 2 cx)
+        (reg:DI 90)) ".\..\a.c":19:5 -1
+     (expr_list:REG_EQUAL (symbol_ref/f:DI ("*.LC1") [flags 0x2]  <var_decl 000000000397d870 *.LC1>)
+        (nil)))
+
+(call_insn 24 23 0 (set (reg:SI 0 ax)
+        (call (mem:QI (symbol_ref:DI ("printf") [flags 0x3]  <function_decl 00000000038bf300 printf>) [0 printf S1 A8])
+            (const_int 32 [0x20]))) ".\..\a.c":19:5 -1
+     (nil)
+    (expr_list:DI (use (reg:DI 2 cx))
+        (expr_list:SI (use (reg:SI 1 dx))
+            (expr_list:SI (use (reg:SI 36 r8))
+                (nil)))))
+
+;; _8 = 0;
+
+(insn 25 24 0 (set (reg:SI 84 [ _8 ])
+        (const_int 0 [0])) ".\..\a.c":20:12 -1
+     (nil))
+
+;; n ={v} {CLOBBER(eol)};
+
+(nil)
+
+;; Generating RTL for gimple basic block 3
+
+;; <L1>:
+
+(code_label 26 25 27 10 (nil) [0 uses])
+
+(note 27 26 0 NOTE_INSN_BASIC_BLOCK)
+
+;; return _8;
+
+(insn 28 27 29 (set (reg:SI 85 [ <retval> ])
+        (reg:SI 84 [ _8 ])) ".\..\a.c":21:1 -1
+     (nil))
+
+(jump_insn 29 28 30 (set (pc)
+        (label_ref 0)) ".\..\a.c":21:1 -1
+     (nil))
+
+(barrier 30 29 0)
+
+
+try_optimize_cfg iteration 1
+
+Merging block 3 into block 2...
+Merged blocks 2 and 3.
+Merged 2 and 3 without moving.
+Merging block 4 into block 2...
+Merged blocks 2 and 4.
+Merged 2 and 4 without moving.
+Removing jump 29.
+Merging block 5 into block 2...
+Merged blocks 2 and 5.
+Merged 2 and 5 without moving.
+
+
+try_optimize_cfg iteration 2
+
+fix_loop_structure: fixing up loops for function
+
+
+;;
+;; Full RTL generated for this function:
+;;
+(note 1 0 6 NOTE_INSN_DELETED)
+;; basic block 2, loop depth 0, maybe hot
+;;  prev block 0, next block 1, flags: (NEW, REACHABLE, RTL)
+;;  pred:       ENTRY (FALLTHRU)
+(note 6 1 2 2 [bb 2] NOTE_INSN_BASIC_BLOCK)
+(insn 2 6 3 2 (set (mem/c:SI (reg/f:DI 76 virtual-incoming-args) [1 argc+0 S4 A64])
+        (reg:SI 2 cx [ argc ])) ".\..\a.c":14:1 -1
+     (nil))
+(insn 3 2 4 2 (set (mem/f/c:DI (plus:DI (reg/f:DI 76 virtual-incoming-args)
+                (const_int 8 [0x8])) [4 argv+0 S8 A64])
+        (reg:DI 1 dx [ argv ])) ".\..\a.c":14:1 -1
+     (nil))
+(note 4 3 5 2 NOTE_INSN_FUNCTION_BEG)
+(call_insn 5 4 8 2 (call (mem:QI (symbol_ref:DI ("__main") [flags 0x43]  <function_decl 00000000039ed400 __main>) [0  S1 A8])
+        (const_int 32 [0x20])) ".\..\a.c":14:1 -1
+     (expr_list:REG_EH_REGION (const_int -2147483648 [0xffffffff80000000])
+        (nil))
+    (nil))
+(insn 8 5 9 2 (parallel [
+            (set (reg:DI 86)
+                (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                    (const_int -8 [0xfffffffffffffff8])))
+            (clobber (reg:CC 17 flags))
+        ]) ".\..\a.c":16:5 -1
+     (nil))
+(insn 9 8 10 2 (set (reg:DI 1 dx)
+        (reg:DI 86)) ".\..\a.c":16:5 -1
+     (nil))
+(insn 10 9 11 2 (set (reg:DI 87)
+        (symbol_ref/f:DI ("*.LC0") [flags 0x2]  <var_decl 000000000397d7e0 *.LC0>)) ".\..\a.c":16:5 -1
+     (nil))
+(insn 11 10 12 2 (set (reg:DI 2 cx)
+        (reg:DI 87)) ".\..\a.c":16:5 -1
+     (expr_list:REG_EQUAL (symbol_ref/f:DI ("*.LC0") [flags 0x2]  <var_decl 000000000397d7e0 *.LC0>)
+        (nil)))
+(call_insn 12 11 13 2 (set (reg:SI 0 ax)
+        (call (mem:QI (symbol_ref:DI ("scanf") [flags 0x3]  <function_decl 00000000038b3700 scanf>) [0 scanf S1 A8])
+            (const_int 32 [0x20]))) ".\..\a.c":16:5 -1
+     (nil)
+    (expr_list:DI (use (reg:DI 2 cx))
+        (expr_list:DI (use (reg:DI 1 dx))
+            (nil))))
+(insn 13 12 14 2 (set (reg:SI 82 [ n.0_1 ])
+        (mem/c:SI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                (const_int -8 [0xfffffffffffffff8])) [1 n+0 S4 A64])) ".\..\a.c":17:11 -1
+     (nil))
+(insn 14 13 15 2 (set (reg:SI 2 cx)
+        (reg:SI 82 [ n.0_1 ])) ".\..\a.c":17:11 -1
+     (nil))
+(call_insn 15 14 16 2 (set (reg:SI 0 ax)
+        (call (mem:QI (symbol_ref:DI ("fact") [flags 0x3]  <function_decl 0000000003962e00 fact>) [0 fact S1 A8])
+            (const_int 32 [0x20]))) ".\..\a.c":17:11 -1
+     (nil)
+    (expr_list:SI (use (reg:SI 2 cx))
+        (nil)))
+(insn 16 15 17 2 (set (reg:SI 88)
+        (reg:SI 0 ax)) ".\..\a.c":17:11 -1
+     (nil))
+(insn 17 16 18 2 (set (mem/c:SI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                (const_int -4 [0xfffffffffffffffc])) [1 res+0 S4 A32])
+        (reg:SI 88)) ".\..\a.c":17:11 -1
+     (nil))
+(insn 18 17 19 2 (set (reg:SI 83 [ n.1_2 ])
+        (mem/c:SI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                (const_int -8 [0xfffffffffffffff8])) [1 n+0 S4 A64])) ".\..\a.c":19:5 -1
+     (nil))
+(insn 19 18 20 2 (set (reg:SI 89)
+        (mem/c:SI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                (const_int -4 [0xfffffffffffffffc])) [1 res+0 S4 A32])) ".\..\a.c":19:5 -1
+     (nil))
+(insn 20 19 21 2 (set (reg:SI 36 r8)
+        (reg:SI 89)) ".\..\a.c":19:5 -1
+     (nil))
+(insn 21 20 22 2 (set (reg:SI 1 dx)
+        (reg:SI 83 [ n.1_2 ])) ".\..\a.c":19:5 -1
+     (nil))
+(insn 22 21 23 2 (set (reg:DI 90)
+        (symbol_ref/f:DI ("*.LC1") [flags 0x2]  <var_decl 000000000397d870 *.LC1>)) ".\..\a.c":19:5 -1
+     (nil))
+(insn 23 22 24 2 (set (reg:DI 2 cx)
+        (reg:DI 90)) ".\..\a.c":19:5 -1
+     (expr_list:REG_EQUAL (symbol_ref/f:DI ("*.LC1") [flags 0x2]  <var_decl 000000000397d870 *.LC1>)
+        (nil)))
+(call_insn 24 23 25 2 (set (reg:SI 0 ax)
+        (call (mem:QI (symbol_ref:DI ("printf") [flags 0x3]  <function_decl 00000000038bf300 printf>) [0 printf S1 A8])
+            (const_int 32 [0x20]))) ".\..\a.c":19:5 -1
+     (nil)
+    (expr_list:DI (use (reg:DI 2 cx))
+        (expr_list:SI (use (reg:SI 1 dx))
+            (expr_list:SI (use (reg:SI 36 r8))
+                (nil)))))
+(insn 25 24 28 2 (set (reg:SI 84 [ _8 ])
+        (const_int 0 [0])) ".\..\a.c":20:12 -1
+     (nil))
+(insn 28 25 32 2 (set (reg:SI 85 [ <retval> ])
+        (reg:SI 84 [ _8 ])) ".\..\a.c":21:1 -1
+     (nil))
+(insn 32 28 33 2 (set (reg/i:SI 0 ax)
+        (reg:SI 85 [ <retval> ])) ".\..\a.c":21:1 -1
+     (nil))
+(insn 33 32 0 2 (use (reg/i:SI 0 ax)) ".\..\a.c":21:1 -1
+     (nil))
+;;  succ:       EXIT [always]  (FALLTHRU)
+

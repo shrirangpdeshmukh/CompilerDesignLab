@@ -1,0 +1,98 @@
+int fact (int n)
+gimple_bind <
+  int D.3268;
+  int i;
+  int j;
+
+  gimple_assign <integer_cst, j, 1, NULL, NULL>
+  gimple_assign <integer_cst, i, 1, NULL, NULL>
+  gimple_goto <<D.3260>>
+  gimple_label <<D.3259>>
+  gimple_assign <mult_expr, j, j, i, NULL>
+  gimple_assign <plus_expr, i, i, 1, NULL>
+  gimple_label <<D.3260>>
+  gimple_cond <le_expr, i, n, <D.3259>, <D.3257>>
+  gimple_label <<D.3257>>
+  gimple_assign <var_decl, D.3268, j, NULL, NULL>
+  gimple_return <D.3268>
+>
+
+
+ main (int argc, char * * argv)
+gimple_bind <
+  int D.3270;
+
+  gimple_bind <
+    int n;
+    int res;
+
+    gimple_try <GIMPLE_TRY_FINALLY,
+      EVAL <
+        gimple_call <scanf, NULL, "%d", &n>
+        gimple_assign <var_decl, n.0_1, n, NULL, NULL>
+        gimple_call <fact, res, n.0_1>
+        gimple_assign <var_decl, n.1_2, n, NULL, NULL>
+        gimple_call <printf, NULL, "Value of fact(%d): %d\n", n.1_2, res>
+        gimple_assign <integer_cst, D.3270, 0, NULL, NULL>
+        gimple_return <D.3270>
+      >
+      CLEANUP <
+        gimple_assign <constructor, n, {CLOBBER(eol)}, NULL, NULL>
+      >
+    >
+  >
+  gimple_assign <integer_cst, D.3270, 0, NULL, NULL>
+  gimple_return <D.3270>
+>
+
+
+__attribute__((unused))
+__attribute__((nonnull (1), format (gnu_scanf, 1, 2)))
+int scanf (const char * __format)
+gimple_bind <
+  int D.3273;
+  int __retval;
+  char * __local_argv;
+
+  gimple_try <GIMPLE_TRY_FINALLY,
+    EVAL <
+      gimple_call <__builtin_va_start, NULL, &__local_argv, 0>
+      gimple_assign <var_decl, __local_argv.2_1, __local_argv, NULL, NULL>
+      gimple_call <__acrt_iob_func, _2, 0>
+      gimple_call <__mingw_vfscanf, __retval, _2, __format, __local_argv.2_1>
+      gimple_call <__builtin_va_end, NULL, &__local_argv>
+      gimple_assign <var_decl, D.3273, __retval, NULL, NULL>
+      gimple_return <D.3273>
+    >
+    CLEANUP <
+      gimple_assign <constructor, __local_argv, {CLOBBER(eol)}, NULL, NULL>
+    >
+  >
+>
+
+
+__attribute__((unused))
+__attribute__((nonnull (1), format (gnu_printf, 1, 2)))
+int printf (const char * __format)
+gimple_bind <
+  int D.3276;
+  int __retval;
+  char * __local_argv;
+
+  gimple_try <GIMPLE_TRY_FINALLY,
+    EVAL <
+      gimple_call <__builtin_va_start, NULL, &__local_argv, 0>
+      gimple_assign <var_decl, __local_argv.3_1, __local_argv, NULL, NULL>
+      gimple_call <__acrt_iob_func, _2, 1>
+      gimple_call <__mingw_vfprintf, __retval, _2, __format, __local_argv.3_1>
+      gimple_call <__builtin_va_end, NULL, &__local_argv>
+      gimple_assign <var_decl, D.3276, __retval, NULL, NULL>
+      gimple_return <D.3276>
+    >
+    CLEANUP <
+      gimple_assign <constructor, __local_argv, {CLOBBER(eol)}, NULL, NULL>
+    >
+  >
+>
+
+

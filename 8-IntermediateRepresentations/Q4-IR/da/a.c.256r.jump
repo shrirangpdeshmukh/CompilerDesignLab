@@ -1,0 +1,840 @@
+
+;; Function scanf (scanf, funcdef_no=2, decl_uid=2151, cgraph_uid=3, symbol_order=2)
+
+
+3 basic blocks, 2 edges.
+;; basic block 0, loop depth 0, maybe hot
+;;  prev block (nil), next block 2, flags: (RTL)
+;;  pred:      
+;;  succ:       2 (FALLTHRU)
+
+;; basic block 2, loop depth 0, maybe hot
+;;  prev block 0, next block 1, flags: (NEW, REACHABLE, RTL)
+;;  pred:       ENTRY (FALLTHRU)
+(note 7 0 2 2 [bb 2] NOTE_INSN_BASIC_BLOCK)
+(insn 2 7 3 2 (set (mem/f/c:DI (reg/f:DI 16 argp) [2 __format+0 S8 A64])
+        (reg:DI 2 cx [ __format ])) "C:/msys64/mingw64/include/stdio.h":302:1 80 {*movdi_internal}
+     (nil))
+(insn 3 2 4 2 (set (mem/c:DI (plus:DI (reg/f:DI 16 argp)
+                (const_int 8 [0x8])) [0  S8 A8])
+        (reg:DI 1 dx)) "C:/msys64/mingw64/include/stdio.h":302:1 80 {*movdi_internal}
+     (nil))
+(insn 4 3 5 2 (set (mem/c:DI (plus:DI (reg/f:DI 16 argp)
+                (const_int 16 [0x10])) [0  S8 A8])
+        (reg:DI 36 r8)) "C:/msys64/mingw64/include/stdio.h":302:1 80 {*movdi_internal}
+     (nil))
+(insn 5 4 6 2 (set (mem/c:DI (plus:DI (reg/f:DI 16 argp)
+                (const_int 24 [0x18])) [0  S8 A8])
+        (reg:DI 37 r9)) "C:/msys64/mingw64/include/stdio.h":302:1 80 {*movdi_internal}
+     (nil))
+(note 6 5 9 2 NOTE_INSN_FUNCTION_BEG)
+(insn 9 6 10 2 (parallel [
+            (set (reg:DI 86)
+                (plus:DI (reg/f:DI 16 argp)
+                    (const_int 8 [0x8])))
+            (clobber (reg:CC 17 flags))
+        ]) "C:/msys64/mingw64/include/stdio.h":304:35 230 {*adddi_1}
+     (nil))
+(insn 10 9 11 2 (set (mem/f/c:DI (plus:DI (reg/f:DI 19 frame)
+                (const_int -16 [0xfffffffffffffff0])) [2 MEM[(char * *)&__local_argv]+0 S8 A128])
+        (reg:DI 86)) "C:/msys64/mingw64/include/stdio.h":304:35 80 {*movdi_internal}
+     (nil))
+(insn 11 10 12 2 (set (reg/f:DI 82 [ __local_argv.2_1 ])
+        (mem/f/c:DI (plus:DI (reg/f:DI 19 frame)
+                (const_int -16 [0xfffffffffffffff0])) [2 __local_argv+0 S8 A128])) "C:/msys64/mingw64/include/stdio.h":305:14 80 {*movdi_internal}
+     (nil))
+(insn 12 11 13 2 (set (reg:SI 2 cx)
+        (const_int 0 [0])) "C:/msys64/mingw64/include/stdio.h":305:14 81 {*movsi_internal}
+     (nil))
+(insn 13 12 14 2 (set (reg:DI 87)
+        (mem/u/c:DI (symbol_ref:DI ("*__imp___acrt_iob_func") [flags 0x2002]  <var_decl 000000000397d750 D.3283>) [3  S8 A8])) "C:/msys64/mingw64/include/stdio.h":305:14 80 {*movdi_internal}
+     (expr_list:REG_EQUAL (symbol_ref:DI ("__acrt_iob_func") [flags 0x441]  <function_decl 0000000003882800 __acrt_iob_func>)
+        (nil)))
+(call_insn 14 13 15 2 (set (reg:DI 0 ax)
+        (call (mem:QI (reg:DI 87) [0 __acrt_iob_func S1 A8])
+            (const_int 32 [0x20]))) "C:/msys64/mingw64/include/stdio.h":305:14 909 {*call_value}
+     (nil)
+    (expr_list:SI (use (reg:SI 2 cx))
+        (nil)))
+(insn 15 14 16 2 (set (reg/f:DI 83 [ _2 ])
+        (reg:DI 0 ax)) "C:/msys64/mingw64/include/stdio.h":305:14 80 {*movdi_internal}
+     (nil))
+(insn 16 15 17 2 (set (reg:DI 88)
+        (mem/f/c:DI (reg/f:DI 16 argp) [2 __format+0 S8 A64])) "C:/msys64/mingw64/include/stdio.h":305:14 80 {*movdi_internal}
+     (nil))
+(insn 17 16 18 2 (set (reg:DI 36 r8)
+        (reg/f:DI 82 [ __local_argv.2_1 ])) "C:/msys64/mingw64/include/stdio.h":305:14 80 {*movdi_internal}
+     (nil))
+(insn 18 17 19 2 (set (reg:DI 1 dx)
+        (reg:DI 88)) "C:/msys64/mingw64/include/stdio.h":305:14 80 {*movdi_internal}
+     (nil))
+(insn 19 18 20 2 (set (reg:DI 2 cx)
+        (reg/f:DI 83 [ _2 ])) "C:/msys64/mingw64/include/stdio.h":305:14 80 {*movdi_internal}
+     (nil))
+(call_insn 20 19 21 2 (set (reg:SI 0 ax)
+        (call (mem:QI (symbol_ref:DI ("__mingw_vfscanf") [flags 0x43]  <function_decl 00000000038aa100 __mingw_vfscanf>) [0 __mingw_vfscanf S1 A8])
+            (const_int 32 [0x20]))) "C:/msys64/mingw64/include/stdio.h":305:14 909 {*call_value}
+     (nil)
+    (expr_list:DI (use (reg:DI 2 cx))
+        (expr_list:DI (use (reg:DI 1 dx))
+            (expr_list:DI (use (reg:DI 36 r8))
+                (nil)))))
+(insn 21 20 22 2 (set (reg:SI 89)
+        (reg:SI 0 ax)) "C:/msys64/mingw64/include/stdio.h":305:14 81 {*movsi_internal}
+     (nil))
+(insn 22 21 23 2 (set (mem/c:SI (plus:DI (reg/f:DI 19 frame)
+                (const_int -4 [0xfffffffffffffffc])) [1 __retval+0 S4 A32])
+        (reg:SI 89)) "C:/msys64/mingw64/include/stdio.h":305:14 81 {*movsi_internal}
+     (nil))
+(insn 23 22 26 2 (set (reg:SI 84 [ _10 ])
+        (mem/c:SI (plus:DI (reg/f:DI 19 frame)
+                (const_int -4 [0xfffffffffffffffc])) [1 __retval+0 S4 A32])) "C:/msys64/mingw64/include/stdio.h":307:10 81 {*movsi_internal}
+     (nil))
+(insn 26 23 30 2 (set (reg:SI 85 [ <retval> ])
+        (reg:SI 84 [ _10 ])) "C:/msys64/mingw64/include/stdio.h":307:10 81 {*movsi_internal}
+     (nil))
+(insn 30 26 31 2 (set (reg/i:SI 0 ax)
+        (reg:SI 85 [ <retval> ])) "C:/msys64/mingw64/include/stdio.h":308:1 81 {*movsi_internal}
+     (nil))
+(insn 31 30 0 2 (use (reg/i:SI 0 ax)) "C:/msys64/mingw64/include/stdio.h":308:1 -1
+     (nil))
+;;  succ:       EXIT [always]  (FALLTHRU)
+
+;; basic block 1, loop depth 0, maybe hot
+;;  prev block 2, next block (nil), flags: (REACHABLE, RTL)
+;;  pred:       2 [always]  (FALLTHRU)
+;;  succ:      
+
+
+
+
+try_optimize_cfg iteration 1
+
+;; basic block 2, loop depth 0, maybe hot
+;;  prev block 0, next block 1, flags: (NEW, REACHABLE, RTL)
+;;  pred:       ENTRY (FALLTHRU)
+(note 7 0 2 2 [bb 2] NOTE_INSN_BASIC_BLOCK)
+(insn 2 7 3 2 (set (mem/f/c:DI (reg/f:DI 16 argp) [2 __format+0 S8 A64])
+        (reg:DI 2 cx [ __format ])) "C:/msys64/mingw64/include/stdio.h":302:1 80 {*movdi_internal}
+     (nil))
+(insn 3 2 4 2 (set (mem/c:DI (plus:DI (reg/f:DI 16 argp)
+                (const_int 8 [0x8])) [0  S8 A8])
+        (reg:DI 1 dx)) "C:/msys64/mingw64/include/stdio.h":302:1 80 {*movdi_internal}
+     (nil))
+(insn 4 3 5 2 (set (mem/c:DI (plus:DI (reg/f:DI 16 argp)
+                (const_int 16 [0x10])) [0  S8 A8])
+        (reg:DI 36 r8)) "C:/msys64/mingw64/include/stdio.h":302:1 80 {*movdi_internal}
+     (nil))
+(insn 5 4 6 2 (set (mem/c:DI (plus:DI (reg/f:DI 16 argp)
+                (const_int 24 [0x18])) [0  S8 A8])
+        (reg:DI 37 r9)) "C:/msys64/mingw64/include/stdio.h":302:1 80 {*movdi_internal}
+     (nil))
+(note 6 5 9 2 NOTE_INSN_FUNCTION_BEG)
+(insn 9 6 10 2 (parallel [
+            (set (reg:DI 86)
+                (plus:DI (reg/f:DI 16 argp)
+                    (const_int 8 [0x8])))
+            (clobber (reg:CC 17 flags))
+        ]) "C:/msys64/mingw64/include/stdio.h":304:35 230 {*adddi_1}
+     (nil))
+(insn 10 9 11 2 (set (mem/f/c:DI (plus:DI (reg/f:DI 19 frame)
+                (const_int -16 [0xfffffffffffffff0])) [2 MEM[(char * *)&__local_argv]+0 S8 A128])
+        (reg:DI 86)) "C:/msys64/mingw64/include/stdio.h":304:35 80 {*movdi_internal}
+     (nil))
+(insn 11 10 12 2 (set (reg/f:DI 82 [ __local_argv.2_1 ])
+        (mem/f/c:DI (plus:DI (reg/f:DI 19 frame)
+                (const_int -16 [0xfffffffffffffff0])) [2 __local_argv+0 S8 A128])) "C:/msys64/mingw64/include/stdio.h":305:14 80 {*movdi_internal}
+     (nil))
+(insn 12 11 13 2 (set (reg:SI 2 cx)
+        (const_int 0 [0])) "C:/msys64/mingw64/include/stdio.h":305:14 81 {*movsi_internal}
+     (nil))
+(insn 13 12 14 2 (set (reg:DI 87)
+        (mem/u/c:DI (symbol_ref:DI ("*__imp___acrt_iob_func") [flags 0x2002]  <var_decl 000000000397d750 D.3283>) [3  S8 A8])) "C:/msys64/mingw64/include/stdio.h":305:14 80 {*movdi_internal}
+     (expr_list:REG_EQUAL (symbol_ref:DI ("__acrt_iob_func") [flags 0x441]  <function_decl 0000000003882800 __acrt_iob_func>)
+        (nil)))
+(call_insn 14 13 15 2 (set (reg:DI 0 ax)
+        (call (mem:QI (reg:DI 87) [0 __acrt_iob_func S1 A8])
+            (const_int 32 [0x20]))) "C:/msys64/mingw64/include/stdio.h":305:14 909 {*call_value}
+     (nil)
+    (expr_list:SI (use (reg:SI 2 cx))
+        (nil)))
+(insn 15 14 16 2 (set (reg/f:DI 83 [ _2 ])
+        (reg:DI 0 ax)) "C:/msys64/mingw64/include/stdio.h":305:14 80 {*movdi_internal}
+     (nil))
+(insn 16 15 17 2 (set (reg:DI 88)
+        (mem/f/c:DI (reg/f:DI 16 argp) [2 __format+0 S8 A64])) "C:/msys64/mingw64/include/stdio.h":305:14 80 {*movdi_internal}
+     (nil))
+(insn 17 16 18 2 (set (reg:DI 36 r8)
+        (reg/f:DI 82 [ __local_argv.2_1 ])) "C:/msys64/mingw64/include/stdio.h":305:14 80 {*movdi_internal}
+     (nil))
+(insn 18 17 19 2 (set (reg:DI 1 dx)
+        (reg:DI 88)) "C:/msys64/mingw64/include/stdio.h":305:14 80 {*movdi_internal}
+     (nil))
+(insn 19 18 20 2 (set (reg:DI 2 cx)
+        (reg/f:DI 83 [ _2 ])) "C:/msys64/mingw64/include/stdio.h":305:14 80 {*movdi_internal}
+     (nil))
+(call_insn 20 19 21 2 (set (reg:SI 0 ax)
+        (call (mem:QI (symbol_ref:DI ("__mingw_vfscanf") [flags 0x43]  <function_decl 00000000038aa100 __mingw_vfscanf>) [0 __mingw_vfscanf S1 A8])
+            (const_int 32 [0x20]))) "C:/msys64/mingw64/include/stdio.h":305:14 909 {*call_value}
+     (nil)
+    (expr_list:DI (use (reg:DI 2 cx))
+        (expr_list:DI (use (reg:DI 1 dx))
+            (expr_list:DI (use (reg:DI 36 r8))
+                (nil)))))
+(insn 21 20 22 2 (set (reg:SI 89)
+        (reg:SI 0 ax)) "C:/msys64/mingw64/include/stdio.h":305:14 81 {*movsi_internal}
+     (nil))
+(insn 22 21 23 2 (set (mem/c:SI (plus:DI (reg/f:DI 19 frame)
+                (const_int -4 [0xfffffffffffffffc])) [1 __retval+0 S4 A32])
+        (reg:SI 89)) "C:/msys64/mingw64/include/stdio.h":305:14 81 {*movsi_internal}
+     (nil))
+(insn 23 22 26 2 (set (reg:SI 84 [ _10 ])
+        (mem/c:SI (plus:DI (reg/f:DI 19 frame)
+                (const_int -4 [0xfffffffffffffffc])) [1 __retval+0 S4 A32])) "C:/msys64/mingw64/include/stdio.h":307:10 81 {*movsi_internal}
+     (nil))
+(insn 26 23 30 2 (set (reg:SI 85 [ <retval> ])
+        (reg:SI 84 [ _10 ])) "C:/msys64/mingw64/include/stdio.h":307:10 81 {*movsi_internal}
+     (nil))
+(insn 30 26 31 2 (set (reg/i:SI 0 ax)
+        (reg:SI 85 [ <retval> ])) "C:/msys64/mingw64/include/stdio.h":308:1 81 {*movsi_internal}
+     (nil))
+(insn 31 30 0 2 (use (reg/i:SI 0 ax)) "C:/msys64/mingw64/include/stdio.h":308:1 -1
+     (nil))
+;;  succ:       EXIT [always]  (FALLTHRU)
+
+
+;; Function printf (printf, funcdef_no=8, decl_uid=2182, cgraph_uid=9, symbol_order=8)
+
+
+3 basic blocks, 2 edges.
+;; basic block 0, loop depth 0, maybe hot
+;;  prev block (nil), next block 2, flags: (RTL)
+;;  pred:      
+;;  succ:       2 (FALLTHRU)
+
+;; basic block 2, loop depth 0, maybe hot
+;;  prev block 0, next block 1, flags: (NEW, REACHABLE, RTL)
+;;  pred:       ENTRY (FALLTHRU)
+(note 7 0 2 2 [bb 2] NOTE_INSN_BASIC_BLOCK)
+(insn 2 7 3 2 (set (mem/f/c:DI (reg/f:DI 16 argp) [2 __format+0 S8 A64])
+        (reg:DI 2 cx [ __format ])) "C:/msys64/mingw64/include/stdio.h":369:1 80 {*movdi_internal}
+     (nil))
+(insn 3 2 4 2 (set (mem/c:DI (plus:DI (reg/f:DI 16 argp)
+                (const_int 8 [0x8])) [0  S8 A8])
+        (reg:DI 1 dx)) "C:/msys64/mingw64/include/stdio.h":369:1 80 {*movdi_internal}
+     (nil))
+(insn 4 3 5 2 (set (mem/c:DI (plus:DI (reg/f:DI 16 argp)
+                (const_int 16 [0x10])) [0  S8 A8])
+        (reg:DI 36 r8)) "C:/msys64/mingw64/include/stdio.h":369:1 80 {*movdi_internal}
+     (nil))
+(insn 5 4 6 2 (set (mem/c:DI (plus:DI (reg/f:DI 16 argp)
+                (const_int 24 [0x18])) [0  S8 A8])
+        (reg:DI 37 r9)) "C:/msys64/mingw64/include/stdio.h":369:1 80 {*movdi_internal}
+     (nil))
+(note 6 5 9 2 NOTE_INSN_FUNCTION_BEG)
+(insn 9 6 10 2 (parallel [
+            (set (reg:DI 86)
+                (plus:DI (reg/f:DI 16 argp)
+                    (const_int 8 [0x8])))
+            (clobber (reg:CC 17 flags))
+        ]) "C:/msys64/mingw64/include/stdio.h":371:35 230 {*adddi_1}
+     (nil))
+(insn 10 9 11 2 (set (mem/f/c:DI (plus:DI (reg/f:DI 19 frame)
+                (const_int -16 [0xfffffffffffffff0])) [2 MEM[(char * *)&__local_argv]+0 S8 A128])
+        (reg:DI 86)) "C:/msys64/mingw64/include/stdio.h":371:35 80 {*movdi_internal}
+     (nil))
+(insn 11 10 12 2 (set (reg/f:DI 82 [ __local_argv.3_1 ])
+        (mem/f/c:DI (plus:DI (reg/f:DI 19 frame)
+                (const_int -16 [0xfffffffffffffff0])) [2 __local_argv+0 S8 A128])) "C:/msys64/mingw64/include/stdio.h":372:14 80 {*movdi_internal}
+     (nil))
+(insn 12 11 13 2 (set (reg:SI 2 cx)
+        (const_int 1 [0x1])) "C:/msys64/mingw64/include/stdio.h":372:14 81 {*movsi_internal}
+     (nil))
+(insn 13 12 14 2 (set (reg:DI 87)
+        (mem/u/c:DI (symbol_ref:DI ("*__imp___acrt_iob_func") [flags 0x2002]  <var_decl 000000000397d750 D.3283>) [3  S8 A8])) "C:/msys64/mingw64/include/stdio.h":372:14 80 {*movdi_internal}
+     (expr_list:REG_EQUAL (symbol_ref:DI ("__acrt_iob_func") [flags 0x441]  <function_decl 0000000003882800 __acrt_iob_func>)
+        (nil)))
+(call_insn 14 13 15 2 (set (reg:DI 0 ax)
+        (call (mem:QI (reg:DI 87) [0 __acrt_iob_func S1 A8])
+            (const_int 32 [0x20]))) "C:/msys64/mingw64/include/stdio.h":372:14 909 {*call_value}
+     (nil)
+    (expr_list:SI (use (reg:SI 2 cx))
+        (nil)))
+(insn 15 14 16 2 (set (reg/f:DI 83 [ _2 ])
+        (reg:DI 0 ax)) "C:/msys64/mingw64/include/stdio.h":372:14 80 {*movdi_internal}
+     (nil))
+(insn 16 15 17 2 (set (reg:DI 88)
+        (mem/f/c:DI (reg/f:DI 16 argp) [2 __format+0 S8 A64])) "C:/msys64/mingw64/include/stdio.h":372:14 80 {*movdi_internal}
+     (nil))
+(insn 17 16 18 2 (set (reg:DI 36 r8)
+        (reg/f:DI 82 [ __local_argv.3_1 ])) "C:/msys64/mingw64/include/stdio.h":372:14 80 {*movdi_internal}
+     (nil))
+(insn 18 17 19 2 (set (reg:DI 1 dx)
+        (reg:DI 88)) "C:/msys64/mingw64/include/stdio.h":372:14 80 {*movdi_internal}
+     (nil))
+(insn 19 18 20 2 (set (reg:DI 2 cx)
+        (reg/f:DI 83 [ _2 ])) "C:/msys64/mingw64/include/stdio.h":372:14 80 {*movdi_internal}
+     (nil))
+(call_insn 20 19 21 2 (set (reg:SI 0 ax)
+        (call (mem:QI (symbol_ref:DI ("__mingw_vfprintf") [flags 0x43]  <function_decl 00000000038aa700 __mingw_vfprintf>) [0 __mingw_vfprintf S1 A8])
+            (const_int 32 [0x20]))) "C:/msys64/mingw64/include/stdio.h":372:14 909 {*call_value}
+     (expr_list:REG_EH_REGION (const_int 0 [0])
+        (nil))
+    (expr_list:DI (use (reg:DI 2 cx))
+        (expr_list:DI (use (reg:DI 1 dx))
+            (expr_list:DI (use (reg:DI 36 r8))
+                (nil)))))
+(insn 21 20 22 2 (set (reg:SI 89)
+        (reg:SI 0 ax)) "C:/msys64/mingw64/include/stdio.h":372:14 81 {*movsi_internal}
+     (nil))
+(insn 22 21 23 2 (set (mem/c:SI (plus:DI (reg/f:DI 19 frame)
+                (const_int -4 [0xfffffffffffffffc])) [1 __retval+0 S4 A32])
+        (reg:SI 89)) "C:/msys64/mingw64/include/stdio.h":372:14 81 {*movsi_internal}
+     (nil))
+(insn 23 22 26 2 (set (reg:SI 84 [ _10 ])
+        (mem/c:SI (plus:DI (reg/f:DI 19 frame)
+                (const_int -4 [0xfffffffffffffffc])) [1 __retval+0 S4 A32])) "C:/msys64/mingw64/include/stdio.h":374:10 81 {*movsi_internal}
+     (nil))
+(insn 26 23 30 2 (set (reg:SI 85 [ <retval> ])
+        (reg:SI 84 [ _10 ])) "C:/msys64/mingw64/include/stdio.h":374:10 81 {*movsi_internal}
+     (nil))
+(insn 30 26 31 2 (set (reg/i:SI 0 ax)
+        (reg:SI 85 [ <retval> ])) "C:/msys64/mingw64/include/stdio.h":375:1 81 {*movsi_internal}
+     (nil))
+(insn 31 30 0 2 (use (reg/i:SI 0 ax)) "C:/msys64/mingw64/include/stdio.h":375:1 -1
+     (nil))
+;;  succ:       EXIT [always]  (FALLTHRU)
+
+;; basic block 1, loop depth 0, maybe hot
+;;  prev block 2, next block (nil), flags: (REACHABLE, RTL)
+;;  pred:       2 [always]  (FALLTHRU)
+;;  succ:      
+
+
+
+
+try_optimize_cfg iteration 1
+
+;; basic block 2, loop depth 0, maybe hot
+;;  prev block 0, next block 1, flags: (NEW, REACHABLE, RTL)
+;;  pred:       ENTRY (FALLTHRU)
+(note 7 0 2 2 [bb 2] NOTE_INSN_BASIC_BLOCK)
+(insn 2 7 3 2 (set (mem/f/c:DI (reg/f:DI 16 argp) [2 __format+0 S8 A64])
+        (reg:DI 2 cx [ __format ])) "C:/msys64/mingw64/include/stdio.h":369:1 80 {*movdi_internal}
+     (nil))
+(insn 3 2 4 2 (set (mem/c:DI (plus:DI (reg/f:DI 16 argp)
+                (const_int 8 [0x8])) [0  S8 A8])
+        (reg:DI 1 dx)) "C:/msys64/mingw64/include/stdio.h":369:1 80 {*movdi_internal}
+     (nil))
+(insn 4 3 5 2 (set (mem/c:DI (plus:DI (reg/f:DI 16 argp)
+                (const_int 16 [0x10])) [0  S8 A8])
+        (reg:DI 36 r8)) "C:/msys64/mingw64/include/stdio.h":369:1 80 {*movdi_internal}
+     (nil))
+(insn 5 4 6 2 (set (mem/c:DI (plus:DI (reg/f:DI 16 argp)
+                (const_int 24 [0x18])) [0  S8 A8])
+        (reg:DI 37 r9)) "C:/msys64/mingw64/include/stdio.h":369:1 80 {*movdi_internal}
+     (nil))
+(note 6 5 9 2 NOTE_INSN_FUNCTION_BEG)
+(insn 9 6 10 2 (parallel [
+            (set (reg:DI 86)
+                (plus:DI (reg/f:DI 16 argp)
+                    (const_int 8 [0x8])))
+            (clobber (reg:CC 17 flags))
+        ]) "C:/msys64/mingw64/include/stdio.h":371:35 230 {*adddi_1}
+     (nil))
+(insn 10 9 11 2 (set (mem/f/c:DI (plus:DI (reg/f:DI 19 frame)
+                (const_int -16 [0xfffffffffffffff0])) [2 MEM[(char * *)&__local_argv]+0 S8 A128])
+        (reg:DI 86)) "C:/msys64/mingw64/include/stdio.h":371:35 80 {*movdi_internal}
+     (nil))
+(insn 11 10 12 2 (set (reg/f:DI 82 [ __local_argv.3_1 ])
+        (mem/f/c:DI (plus:DI (reg/f:DI 19 frame)
+                (const_int -16 [0xfffffffffffffff0])) [2 __local_argv+0 S8 A128])) "C:/msys64/mingw64/include/stdio.h":372:14 80 {*movdi_internal}
+     (nil))
+(insn 12 11 13 2 (set (reg:SI 2 cx)
+        (const_int 1 [0x1])) "C:/msys64/mingw64/include/stdio.h":372:14 81 {*movsi_internal}
+     (nil))
+(insn 13 12 14 2 (set (reg:DI 87)
+        (mem/u/c:DI (symbol_ref:DI ("*__imp___acrt_iob_func") [flags 0x2002]  <var_decl 000000000397d750 D.3283>) [3  S8 A8])) "C:/msys64/mingw64/include/stdio.h":372:14 80 {*movdi_internal}
+     (expr_list:REG_EQUAL (symbol_ref:DI ("__acrt_iob_func") [flags 0x441]  <function_decl 0000000003882800 __acrt_iob_func>)
+        (nil)))
+(call_insn 14 13 15 2 (set (reg:DI 0 ax)
+        (call (mem:QI (reg:DI 87) [0 __acrt_iob_func S1 A8])
+            (const_int 32 [0x20]))) "C:/msys64/mingw64/include/stdio.h":372:14 909 {*call_value}
+     (nil)
+    (expr_list:SI (use (reg:SI 2 cx))
+        (nil)))
+(insn 15 14 16 2 (set (reg/f:DI 83 [ _2 ])
+        (reg:DI 0 ax)) "C:/msys64/mingw64/include/stdio.h":372:14 80 {*movdi_internal}
+     (nil))
+(insn 16 15 17 2 (set (reg:DI 88)
+        (mem/f/c:DI (reg/f:DI 16 argp) [2 __format+0 S8 A64])) "C:/msys64/mingw64/include/stdio.h":372:14 80 {*movdi_internal}
+     (nil))
+(insn 17 16 18 2 (set (reg:DI 36 r8)
+        (reg/f:DI 82 [ __local_argv.3_1 ])) "C:/msys64/mingw64/include/stdio.h":372:14 80 {*movdi_internal}
+     (nil))
+(insn 18 17 19 2 (set (reg:DI 1 dx)
+        (reg:DI 88)) "C:/msys64/mingw64/include/stdio.h":372:14 80 {*movdi_internal}
+     (nil))
+(insn 19 18 20 2 (set (reg:DI 2 cx)
+        (reg/f:DI 83 [ _2 ])) "C:/msys64/mingw64/include/stdio.h":372:14 80 {*movdi_internal}
+     (nil))
+(call_insn 20 19 21 2 (set (reg:SI 0 ax)
+        (call (mem:QI (symbol_ref:DI ("__mingw_vfprintf") [flags 0x43]  <function_decl 00000000038aa700 __mingw_vfprintf>) [0 __mingw_vfprintf S1 A8])
+            (const_int 32 [0x20]))) "C:/msys64/mingw64/include/stdio.h":372:14 909 {*call_value}
+     (expr_list:REG_EH_REGION (const_int 0 [0])
+        (nil))
+    (expr_list:DI (use (reg:DI 2 cx))
+        (expr_list:DI (use (reg:DI 1 dx))
+            (expr_list:DI (use (reg:DI 36 r8))
+                (nil)))))
+(insn 21 20 22 2 (set (reg:SI 89)
+        (reg:SI 0 ax)) "C:/msys64/mingw64/include/stdio.h":372:14 81 {*movsi_internal}
+     (nil))
+(insn 22 21 23 2 (set (mem/c:SI (plus:DI (reg/f:DI 19 frame)
+                (const_int -4 [0xfffffffffffffffc])) [1 __retval+0 S4 A32])
+        (reg:SI 89)) "C:/msys64/mingw64/include/stdio.h":372:14 81 {*movsi_internal}
+     (nil))
+(insn 23 22 26 2 (set (reg:SI 84 [ _10 ])
+        (mem/c:SI (plus:DI (reg/f:DI 19 frame)
+                (const_int -4 [0xfffffffffffffffc])) [1 __retval+0 S4 A32])) "C:/msys64/mingw64/include/stdio.h":374:10 81 {*movsi_internal}
+     (nil))
+(insn 26 23 30 2 (set (reg:SI 85 [ <retval> ])
+        (reg:SI 84 [ _10 ])) "C:/msys64/mingw64/include/stdio.h":374:10 81 {*movsi_internal}
+     (nil))
+(insn 30 26 31 2 (set (reg/i:SI 0 ax)
+        (reg:SI 85 [ <retval> ])) "C:/msys64/mingw64/include/stdio.h":375:1 81 {*movsi_internal}
+     (nil))
+(insn 31 30 0 2 (use (reg/i:SI 0 ax)) "C:/msys64/mingw64/include/stdio.h":375:1 -1
+     (nil))
+;;  succ:       EXIT [always]  (FALLTHRU)
+
+
+;; Function fact (fact, funcdef_no=29, decl_uid=3253, cgraph_uid=30, symbol_order=29)
+
+
+6 basic blocks, 6 edges.
+;; basic block 0, loop depth 0, maybe hot
+;;  prev block (nil), next block 2, flags: (RTL)
+;;  pred:      
+;;  succ:       2 (FALLTHRU)
+
+;; basic block 2, loop depth 0, maybe hot
+;;  prev block 0, next block 3, flags: (NEW, REACHABLE, RTL)
+;;  pred:       ENTRY (FALLTHRU)
+(note 4 0 2 2 [bb 2] NOTE_INSN_BASIC_BLOCK)
+(insn 2 4 3 2 (set (mem/c:SI (reg/f:DI 16 argp) [1 n+0 S4 A64])
+        (reg:SI 2 cx [ n ])) ".\..\a.c":4:1 81 {*movsi_internal}
+     (nil))
+(note 3 2 6 2 NOTE_INSN_FUNCTION_BEG)
+(insn 6 3 7 2 (set (mem/c:SI (plus:DI (reg/f:DI 19 frame)
+                (const_int -8 [0xfffffffffffffff8])) [1 j+0 S4 A64])
+        (const_int 1 [0x1])) ".\..\a.c":5:12 81 {*movsi_internal}
+     (nil))
+(insn 7 6 17 2 (set (mem/c:SI (plus:DI (reg/f:DI 19 frame)
+                (const_int -4 [0xfffffffffffffffc])) [1 i+0 S4 A32])
+        (const_int 1 [0x1])) ".\..\a.c":6:12 81 {*movsi_internal}
+     (nil))
+;;  succ:       4 [always]  (FALLTHRU) .\..\a.c:6:5
+
+;; basic block 3, loop depth 1, maybe hot
+;;  prev block 2, next block 4, flags: (NEW, REACHABLE, RTL)
+;;  pred:       4
+(code_label 17 7 10 3 7 (nil) [1 uses])
+(note 10 17 11 3 [bb 3] NOTE_INSN_BASIC_BLOCK)
+(insn 11 10 12 3 (set (reg:SI 85)
+        (mem/c:SI (plus:DI (reg/f:DI 19 frame)
+                (const_int -8 [0xfffffffffffffff8])) [1 j+0 S4 A64])) ".\..\a.c":8:11 81 {*movsi_internal}
+     (nil))
+(insn 12 11 13 3 (parallel [
+            (set (reg:SI 84)
+                (mult:SI (reg:SI 85)
+                    (mem/c:SI (plus:DI (reg/f:DI 19 frame)
+                            (const_int -4 [0xfffffffffffffffc])) [1 i+0 S4 A32])))
+            (clobber (reg:CC 17 flags))
+        ]) ".\..\a.c":8:11 444 {*mulsi3_1}
+     (nil))
+(insn 13 12 14 3 (set (mem/c:SI (plus:DI (reg/f:DI 19 frame)
+                (const_int -8 [0xfffffffffffffff8])) [1 j+0 S4 A64])
+        (reg:SI 84)) ".\..\a.c":8:11 81 {*movsi_internal}
+     (nil))
+(insn 14 13 15 3 (parallel [
+            (set (mem/c:SI (plus:DI (reg/f:DI 19 frame)
+                        (const_int -4 [0xfffffffffffffffc])) [1 i+0 S4 A32])
+                (plus:SI (mem/c:SI (plus:DI (reg/f:DI 19 frame)
+                            (const_int -4 [0xfffffffffffffffc])) [1 i+0 S4 A32])
+                    (const_int 1 [0x1])))
+            (clobber (reg:CC 17 flags))
+        ]) ".\..\a.c":6:26 229 {*addsi_1}
+     (nil))
+;;  succ:       4 (FALLTHRU,DFS_BACK)
+
+;; basic block 4, loop depth 1, maybe hot
+;;  prev block 3, next block 5, flags: (NEW, REACHABLE, RTL)
+;;  pred:       2 [always]  (FALLTHRU) .\..\a.c:6:5
+;;              3 (FALLTHRU,DFS_BACK)
+(code_label 15 14 16 4 6 (nil) [0 uses])
+(note 16 15 18 4 [bb 4] NOTE_INSN_BASIC_BLOCK)
+(insn 18 16 19 4 (set (reg:SI 86)
+        (mem/c:SI (plus:DI (reg/f:DI 19 frame)
+                (const_int -4 [0xfffffffffffffffc])) [1 i+0 S4 A32])) ".\..\a.c":6:19 81 {*movsi_internal}
+     (nil))
+(insn 19 18 20 4 (set (reg:CCGC 17 flags)
+        (compare:CCGC (reg:SI 86)
+            (mem/c:SI (reg/f:DI 16 argp) [1 n+0 S4 A64]))) ".\..\a.c":6:19 11 {*cmpsi_1}
+     (nil))
+(jump_insn 20 19 21 4 (set (pc)
+        (if_then_else (le (reg:CCGC 17 flags)
+                (const_int 0 [0]))
+            (label_ref 17)
+            (pc))) ".\..\a.c":6:19 891 {*jcc}
+     (nil)
+ -> 17)
+;;  succ:       3
+;;              5 (FALLTHRU)
+
+;; basic block 5, loop depth 0, maybe hot
+;;  prev block 4, next block 1, flags: (NEW, REACHABLE, RTL)
+;;  pred:       4 (FALLTHRU)
+(note 21 20 22 5 [bb 5] NOTE_INSN_BASIC_BLOCK)
+(insn 22 21 25 5 (set (reg:SI 82 [ _6 ])
+        (mem/c:SI (plus:DI (reg/f:DI 19 frame)
+                (const_int -8 [0xfffffffffffffff8])) [1 j+0 S4 A64])) ".\..\a.c":10:12 81 {*movsi_internal}
+     (nil))
+(insn 25 22 29 5 (set (reg:SI 83 [ <retval> ])
+        (reg:SI 82 [ _6 ])) ".\..\a.c":10:12 81 {*movsi_internal}
+     (nil))
+(insn 29 25 30 5 (set (reg/i:SI 0 ax)
+        (reg:SI 83 [ <retval> ])) ".\..\a.c":11:1 81 {*movsi_internal}
+     (nil))
+(insn 30 29 0 5 (use (reg/i:SI 0 ax)) ".\..\a.c":11:1 -1
+     (nil))
+;;  succ:       EXIT [always]  (FALLTHRU)
+
+;; basic block 1, loop depth 0, maybe hot
+;;  prev block 5, next block (nil), flags: (REACHABLE, RTL)
+;;  pred:       5 [always]  (FALLTHRU)
+;;  succ:      
+
+
+
+
+try_optimize_cfg iteration 1
+
+;; basic block 2, loop depth 0, maybe hot
+;;  prev block 0, next block 3, flags: (NEW, REACHABLE, RTL)
+;;  pred:       ENTRY (FALLTHRU)
+(note 4 0 2 2 [bb 2] NOTE_INSN_BASIC_BLOCK)
+(insn 2 4 3 2 (set (mem/c:SI (reg/f:DI 16 argp) [1 n+0 S4 A64])
+        (reg:SI 2 cx [ n ])) ".\..\a.c":4:1 81 {*movsi_internal}
+     (nil))
+(note 3 2 6 2 NOTE_INSN_FUNCTION_BEG)
+(insn 6 3 7 2 (set (mem/c:SI (plus:DI (reg/f:DI 19 frame)
+                (const_int -8 [0xfffffffffffffff8])) [1 j+0 S4 A64])
+        (const_int 1 [0x1])) ".\..\a.c":5:12 81 {*movsi_internal}
+     (nil))
+(insn 7 6 17 2 (set (mem/c:SI (plus:DI (reg/f:DI 19 frame)
+                (const_int -4 [0xfffffffffffffffc])) [1 i+0 S4 A32])
+        (const_int 1 [0x1])) ".\..\a.c":6:12 81 {*movsi_internal}
+     (nil))
+;;  succ:       4 [always]  (FALLTHRU) .\..\a.c:6:5
+
+;; basic block 3, loop depth 1, maybe hot
+;;  prev block 2, next block 4, flags: (NEW, REACHABLE, RTL)
+;;  pred:       4
+(code_label 17 7 10 3 7 (nil) [1 uses])
+(note 10 17 11 3 [bb 3] NOTE_INSN_BASIC_BLOCK)
+(insn 11 10 12 3 (set (reg:SI 85)
+        (mem/c:SI (plus:DI (reg/f:DI 19 frame)
+                (const_int -8 [0xfffffffffffffff8])) [1 j+0 S4 A64])) ".\..\a.c":8:11 81 {*movsi_internal}
+     (nil))
+(insn 12 11 13 3 (parallel [
+            (set (reg:SI 84)
+                (mult:SI (reg:SI 85)
+                    (mem/c:SI (plus:DI (reg/f:DI 19 frame)
+                            (const_int -4 [0xfffffffffffffffc])) [1 i+0 S4 A32])))
+            (clobber (reg:CC 17 flags))
+        ]) ".\..\a.c":8:11 444 {*mulsi3_1}
+     (nil))
+(insn 13 12 14 3 (set (mem/c:SI (plus:DI (reg/f:DI 19 frame)
+                (const_int -8 [0xfffffffffffffff8])) [1 j+0 S4 A64])
+        (reg:SI 84)) ".\..\a.c":8:11 81 {*movsi_internal}
+     (nil))
+(insn 14 13 15 3 (parallel [
+            (set (mem/c:SI (plus:DI (reg/f:DI 19 frame)
+                        (const_int -4 [0xfffffffffffffffc])) [1 i+0 S4 A32])
+                (plus:SI (mem/c:SI (plus:DI (reg/f:DI 19 frame)
+                            (const_int -4 [0xfffffffffffffffc])) [1 i+0 S4 A32])
+                    (const_int 1 [0x1])))
+            (clobber (reg:CC 17 flags))
+        ]) ".\..\a.c":6:26 229 {*addsi_1}
+     (nil))
+;;  succ:       4 (FALLTHRU,DFS_BACK)
+
+;; basic block 4, loop depth 1, maybe hot
+;;  prev block 3, next block 5, flags: (NEW, REACHABLE, RTL)
+;;  pred:       2 [always]  (FALLTHRU) .\..\a.c:6:5
+;;              3 (FALLTHRU,DFS_BACK)
+(code_label 15 14 16 4 6 (nil) [0 uses])
+(note 16 15 18 4 [bb 4] NOTE_INSN_BASIC_BLOCK)
+(insn 18 16 19 4 (set (reg:SI 86)
+        (mem/c:SI (plus:DI (reg/f:DI 19 frame)
+                (const_int -4 [0xfffffffffffffffc])) [1 i+0 S4 A32])) ".\..\a.c":6:19 81 {*movsi_internal}
+     (nil))
+(insn 19 18 20 4 (set (reg:CCGC 17 flags)
+        (compare:CCGC (reg:SI 86)
+            (mem/c:SI (reg/f:DI 16 argp) [1 n+0 S4 A64]))) ".\..\a.c":6:19 11 {*cmpsi_1}
+     (nil))
+(jump_insn 20 19 21 4 (set (pc)
+        (if_then_else (le (reg:CCGC 17 flags)
+                (const_int 0 [0]))
+            (label_ref 17)
+            (pc))) ".\..\a.c":6:19 891 {*jcc}
+     (nil)
+ -> 17)
+;;  succ:       3
+;;              5 (FALLTHRU)
+
+;; basic block 5, loop depth 0, maybe hot
+;;  prev block 4, next block 1, flags: (NEW, REACHABLE, RTL)
+;;  pred:       4 (FALLTHRU)
+(note 21 20 22 5 [bb 5] NOTE_INSN_BASIC_BLOCK)
+(insn 22 21 25 5 (set (reg:SI 82 [ _6 ])
+        (mem/c:SI (plus:DI (reg/f:DI 19 frame)
+                (const_int -8 [0xfffffffffffffff8])) [1 j+0 S4 A64])) ".\..\a.c":10:12 81 {*movsi_internal}
+     (nil))
+(insn 25 22 29 5 (set (reg:SI 83 [ <retval> ])
+        (reg:SI 82 [ _6 ])) ".\..\a.c":10:12 81 {*movsi_internal}
+     (nil))
+(insn 29 25 30 5 (set (reg/i:SI 0 ax)
+        (reg:SI 83 [ <retval> ])) ".\..\a.c":11:1 81 {*movsi_internal}
+     (nil))
+(insn 30 29 0 5 (use (reg/i:SI 0 ax)) ".\..\a.c":11:1 -1
+     (nil))
+;;  succ:       EXIT [always]  (FALLTHRU)
+
+
+;; Function main (main, funcdef_no=30, decl_uid=3263, cgraph_uid=31, symbol_order=30)
+
+
+3 basic blocks, 2 edges.
+;; basic block 0, loop depth 0, maybe hot
+;;  prev block (nil), next block 2, flags: (RTL)
+;;  pred:      
+;;  succ:       2 (FALLTHRU)
+
+;; basic block 2, loop depth 0, maybe hot
+;;  prev block 0, next block 1, flags: (NEW, REACHABLE, RTL)
+;;  pred:       ENTRY (FALLTHRU)
+(note 6 0 2 2 [bb 2] NOTE_INSN_BASIC_BLOCK)
+(insn 2 6 3 2 (set (mem/c:SI (reg/f:DI 16 argp) [1 argc+0 S4 A64])
+        (reg:SI 2 cx [ argc ])) ".\..\a.c":14:1 81 {*movsi_internal}
+     (nil))
+(insn 3 2 4 2 (set (mem/f/c:DI (plus:DI (reg/f:DI 16 argp)
+                (const_int 8 [0x8])) [4 argv+0 S8 A64])
+        (reg:DI 1 dx [ argv ])) ".\..\a.c":14:1 80 {*movdi_internal}
+     (nil))
+(note 4 3 5 2 NOTE_INSN_FUNCTION_BEG)
+(call_insn 5 4 8 2 (call (mem:QI (symbol_ref:DI ("__main") [flags 0x43]  <function_decl 00000000039ed400 __main>) [0  S1 A8])
+        (const_int 32 [0x20])) ".\..\a.c":14:1 898 {*call}
+     (expr_list:REG_EH_REGION (const_int -2147483648 [0xffffffff80000000])
+        (nil))
+    (nil))
+(insn 8 5 9 2 (parallel [
+            (set (reg:DI 86)
+                (plus:DI (reg/f:DI 19 frame)
+                    (const_int -8 [0xfffffffffffffff8])))
+            (clobber (reg:CC 17 flags))
+        ]) ".\..\a.c":16:5 230 {*adddi_1}
+     (nil))
+(insn 9 8 10 2 (set (reg:DI 1 dx)
+        (reg:DI 86)) ".\..\a.c":16:5 80 {*movdi_internal}
+     (nil))
+(insn 10 9 11 2 (set (reg:DI 87)
+        (symbol_ref/f:DI ("*.LC0") [flags 0x2]  <var_decl 000000000397d7e0 *.LC0>)) ".\..\a.c":16:5 80 {*movdi_internal}
+     (nil))
+(insn 11 10 12 2 (set (reg:DI 2 cx)
+        (reg:DI 87)) ".\..\a.c":16:5 80 {*movdi_internal}
+     (expr_list:REG_EQUAL (symbol_ref/f:DI ("*.LC0") [flags 0x2]  <var_decl 000000000397d7e0 *.LC0>)
+        (nil)))
+(call_insn 12 11 13 2 (set (reg:SI 0 ax)
+        (call (mem:QI (symbol_ref:DI ("scanf") [flags 0x3]  <function_decl 00000000038b3700 scanf>) [0 scanf S1 A8])
+            (const_int 32 [0x20]))) ".\..\a.c":16:5 909 {*call_value}
+     (nil)
+    (expr_list:DI (use (reg:DI 2 cx))
+        (expr_list:DI (use (reg:DI 1 dx))
+            (nil))))
+(insn 13 12 14 2 (set (reg:SI 82 [ n.0_1 ])
+        (mem/c:SI (plus:DI (reg/f:DI 19 frame)
+                (const_int -8 [0xfffffffffffffff8])) [1 n+0 S4 A64])) ".\..\a.c":17:11 81 {*movsi_internal}
+     (nil))
+(insn 14 13 15 2 (set (reg:SI 2 cx)
+        (reg:SI 82 [ n.0_1 ])) ".\..\a.c":17:11 81 {*movsi_internal}
+     (nil))
+(call_insn 15 14 16 2 (set (reg:SI 0 ax)
+        (call (mem:QI (symbol_ref:DI ("fact") [flags 0x3]  <function_decl 0000000003962e00 fact>) [0 fact S1 A8])
+            (const_int 32 [0x20]))) ".\..\a.c":17:11 909 {*call_value}
+     (nil)
+    (expr_list:SI (use (reg:SI 2 cx))
+        (nil)))
+(insn 16 15 17 2 (set (reg:SI 88)
+        (reg:SI 0 ax)) ".\..\a.c":17:11 81 {*movsi_internal}
+     (nil))
+(insn 17 16 18 2 (set (mem/c:SI (plus:DI (reg/f:DI 19 frame)
+                (const_int -4 [0xfffffffffffffffc])) [1 res+0 S4 A32])
+        (reg:SI 88)) ".\..\a.c":17:11 81 {*movsi_internal}
+     (nil))
+(insn 18 17 19 2 (set (reg:SI 83 [ n.1_2 ])
+        (mem/c:SI (plus:DI (reg/f:DI 19 frame)
+                (const_int -8 [0xfffffffffffffff8])) [1 n+0 S4 A64])) ".\..\a.c":19:5 81 {*movsi_internal}
+     (nil))
+(insn 19 18 20 2 (set (reg:SI 89)
+        (mem/c:SI (plus:DI (reg/f:DI 19 frame)
+                (const_int -4 [0xfffffffffffffffc])) [1 res+0 S4 A32])) ".\..\a.c":19:5 81 {*movsi_internal}
+     (nil))
+(insn 20 19 21 2 (set (reg:SI 36 r8)
+        (reg:SI 89)) ".\..\a.c":19:5 81 {*movsi_internal}
+     (nil))
+(insn 21 20 22 2 (set (reg:SI 1 dx)
+        (reg:SI 83 [ n.1_2 ])) ".\..\a.c":19:5 81 {*movsi_internal}
+     (nil))
+(insn 22 21 23 2 (set (reg:DI 90)
+        (symbol_ref/f:DI ("*.LC1") [flags 0x2]  <var_decl 000000000397d870 *.LC1>)) ".\..\a.c":19:5 80 {*movdi_internal}
+     (nil))
+(insn 23 22 24 2 (set (reg:DI 2 cx)
+        (reg:DI 90)) ".\..\a.c":19:5 80 {*movdi_internal}
+     (expr_list:REG_EQUAL (symbol_ref/f:DI ("*.LC1") [flags 0x2]  <var_decl 000000000397d870 *.LC1>)
+        (nil)))
+(call_insn 24 23 25 2 (set (reg:SI 0 ax)
+        (call (mem:QI (symbol_ref:DI ("printf") [flags 0x3]  <function_decl 00000000038bf300 printf>) [0 printf S1 A8])
+            (const_int 32 [0x20]))) ".\..\a.c":19:5 909 {*call_value}
+     (nil)
+    (expr_list:DI (use (reg:DI 2 cx))
+        (expr_list:SI (use (reg:SI 1 dx))
+            (expr_list:SI (use (reg:SI 36 r8))
+                (nil)))))
+(insn 25 24 28 2 (set (reg:SI 84 [ _8 ])
+        (const_int 0 [0])) ".\..\a.c":20:12 81 {*movsi_internal}
+     (nil))
+(insn 28 25 32 2 (set (reg:SI 85 [ <retval> ])
+        (reg:SI 84 [ _8 ])) ".\..\a.c":21:1 81 {*movsi_internal}
+     (nil))
+(insn 32 28 33 2 (set (reg/i:SI 0 ax)
+        (reg:SI 85 [ <retval> ])) ".\..\a.c":21:1 81 {*movsi_internal}
+     (nil))
+(insn 33 32 0 2 (use (reg/i:SI 0 ax)) ".\..\a.c":21:1 -1
+     (nil))
+;;  succ:       EXIT [always]  (FALLTHRU)
+
+;; basic block 1, loop depth 0, maybe hot
+;;  prev block 2, next block (nil), flags: (REACHABLE, RTL)
+;;  pred:       2 [always]  (FALLTHRU)
+;;  succ:      
+
+
+
+
+try_optimize_cfg iteration 1
+
+;; basic block 2, loop depth 0, maybe hot
+;;  prev block 0, next block 1, flags: (NEW, REACHABLE, RTL)
+;;  pred:       ENTRY (FALLTHRU)
+(note 6 0 2 2 [bb 2] NOTE_INSN_BASIC_BLOCK)
+(insn 2 6 3 2 (set (mem/c:SI (reg/f:DI 16 argp) [1 argc+0 S4 A64])
+        (reg:SI 2 cx [ argc ])) ".\..\a.c":14:1 81 {*movsi_internal}
+     (nil))
+(insn 3 2 4 2 (set (mem/f/c:DI (plus:DI (reg/f:DI 16 argp)
+                (const_int 8 [0x8])) [4 argv+0 S8 A64])
+        (reg:DI 1 dx [ argv ])) ".\..\a.c":14:1 80 {*movdi_internal}
+     (nil))
+(note 4 3 5 2 NOTE_INSN_FUNCTION_BEG)
+(call_insn 5 4 8 2 (call (mem:QI (symbol_ref:DI ("__main") [flags 0x43]  <function_decl 00000000039ed400 __main>) [0  S1 A8])
+        (const_int 32 [0x20])) ".\..\a.c":14:1 898 {*call}
+     (expr_list:REG_EH_REGION (const_int -2147483648 [0xffffffff80000000])
+        (nil))
+    (nil))
+(insn 8 5 9 2 (parallel [
+            (set (reg:DI 86)
+                (plus:DI (reg/f:DI 19 frame)
+                    (const_int -8 [0xfffffffffffffff8])))
+            (clobber (reg:CC 17 flags))
+        ]) ".\..\a.c":16:5 230 {*adddi_1}
+     (nil))
+(insn 9 8 10 2 (set (reg:DI 1 dx)
+        (reg:DI 86)) ".\..\a.c":16:5 80 {*movdi_internal}
+     (nil))
+(insn 10 9 11 2 (set (reg:DI 87)
+        (symbol_ref/f:DI ("*.LC0") [flags 0x2]  <var_decl 000000000397d7e0 *.LC0>)) ".\..\a.c":16:5 80 {*movdi_internal}
+     (nil))
+(insn 11 10 12 2 (set (reg:DI 2 cx)
+        (reg:DI 87)) ".\..\a.c":16:5 80 {*movdi_internal}
+     (expr_list:REG_EQUAL (symbol_ref/f:DI ("*.LC0") [flags 0x2]  <var_decl 000000000397d7e0 *.LC0>)
+        (nil)))
+(call_insn 12 11 13 2 (set (reg:SI 0 ax)
+        (call (mem:QI (symbol_ref:DI ("scanf") [flags 0x3]  <function_decl 00000000038b3700 scanf>) [0 scanf S1 A8])
+            (const_int 32 [0x20]))) ".\..\a.c":16:5 909 {*call_value}
+     (nil)
+    (expr_list:DI (use (reg:DI 2 cx))
+        (expr_list:DI (use (reg:DI 1 dx))
+            (nil))))
+(insn 13 12 14 2 (set (reg:SI 82 [ n.0_1 ])
+        (mem/c:SI (plus:DI (reg/f:DI 19 frame)
+                (const_int -8 [0xfffffffffffffff8])) [1 n+0 S4 A64])) ".\..\a.c":17:11 81 {*movsi_internal}
+     (nil))
+(insn 14 13 15 2 (set (reg:SI 2 cx)
+        (reg:SI 82 [ n.0_1 ])) ".\..\a.c":17:11 81 {*movsi_internal}
+     (nil))
+(call_insn 15 14 16 2 (set (reg:SI 0 ax)
+        (call (mem:QI (symbol_ref:DI ("fact") [flags 0x3]  <function_decl 0000000003962e00 fact>) [0 fact S1 A8])
+            (const_int 32 [0x20]))) ".\..\a.c":17:11 909 {*call_value}
+     (nil)
+    (expr_list:SI (use (reg:SI 2 cx))
+        (nil)))
+(insn 16 15 17 2 (set (reg:SI 88)
+        (reg:SI 0 ax)) ".\..\a.c":17:11 81 {*movsi_internal}
+     (nil))
+(insn 17 16 18 2 (set (mem/c:SI (plus:DI (reg/f:DI 19 frame)
+                (const_int -4 [0xfffffffffffffffc])) [1 res+0 S4 A32])
+        (reg:SI 88)) ".\..\a.c":17:11 81 {*movsi_internal}
+     (nil))
+(insn 18 17 19 2 (set (reg:SI 83 [ n.1_2 ])
+        (mem/c:SI (plus:DI (reg/f:DI 19 frame)
+                (const_int -8 [0xfffffffffffffff8])) [1 n+0 S4 A64])) ".\..\a.c":19:5 81 {*movsi_internal}
+     (nil))
+(insn 19 18 20 2 (set (reg:SI 89)
+        (mem/c:SI (plus:DI (reg/f:DI 19 frame)
+                (const_int -4 [0xfffffffffffffffc])) [1 res+0 S4 A32])) ".\..\a.c":19:5 81 {*movsi_internal}
+     (nil))
+(insn 20 19 21 2 (set (reg:SI 36 r8)
+        (reg:SI 89)) ".\..\a.c":19:5 81 {*movsi_internal}
+     (nil))
+(insn 21 20 22 2 (set (reg:SI 1 dx)
+        (reg:SI 83 [ n.1_2 ])) ".\..\a.c":19:5 81 {*movsi_internal}
+     (nil))
+(insn 22 21 23 2 (set (reg:DI 90)
+        (symbol_ref/f:DI ("*.LC1") [flags 0x2]  <var_decl 000000000397d870 *.LC1>)) ".\..\a.c":19:5 80 {*movdi_internal}
+     (nil))
+(insn 23 22 24 2 (set (reg:DI 2 cx)
+        (reg:DI 90)) ".\..\a.c":19:5 80 {*movdi_internal}
+     (expr_list:REG_EQUAL (symbol_ref/f:DI ("*.LC1") [flags 0x2]  <var_decl 000000000397d870 *.LC1>)
+        (nil)))
+(call_insn 24 23 25 2 (set (reg:SI 0 ax)
+        (call (mem:QI (symbol_ref:DI ("printf") [flags 0x3]  <function_decl 00000000038bf300 printf>) [0 printf S1 A8])
+            (const_int 32 [0x20]))) ".\..\a.c":19:5 909 {*call_value}
+     (nil)
+    (expr_list:DI (use (reg:DI 2 cx))
+        (expr_list:SI (use (reg:SI 1 dx))
+            (expr_list:SI (use (reg:SI 36 r8))
+                (nil)))))
+(insn 25 24 28 2 (set (reg:SI 84 [ _8 ])
+        (const_int 0 [0])) ".\..\a.c":20:12 81 {*movsi_internal}
+     (nil))
+(insn 28 25 32 2 (set (reg:SI 85 [ <retval> ])
+        (reg:SI 84 [ _8 ])) ".\..\a.c":21:1 81 {*movsi_internal}
+     (nil))
+(insn 32 28 33 2 (set (reg/i:SI 0 ax)
+        (reg:SI 85 [ <retval> ])) ".\..\a.c":21:1 81 {*movsi_internal}
+     (nil))
+(insn 33 32 0 2 (use (reg/i:SI 0 ax)) ".\..\a.c":21:1 -1
+     (nil))
+;;  succ:       EXIT [always]  (FALLTHRU)
+
