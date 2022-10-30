@@ -1,0 +1,53 @@
+Three Address Code:
+------------------------------------------
+ x = 1
+ T0 = x + 5
+ y = T0
+ print x
+ T1 = Read y
+ T2 = p != q
+ T3 = a == 5
+ T4 = T2 and T3
+ T5 = T4
+ If ! (T5) goto L0
+ print c
+ T6 = a < b
+ T7 = T6
+ If ! (T7) goto L1
+ T8 = a + b
+ b = T8
+ L2 :  T9 = m < n
+ If ! (T9) goto L3
+ T10 = a * 4
+ n = T10
+ goto L2
+ L3 :  T11 = 7 * 8
+ v = T11
+ goto L4
+ L1 :  T12 = Read f
+ L4 :  print q
+ goto L5
+ L0 :  print a
+ print b
+ L5 :  a = 5
+ L6 :  T13 = x > y
+ If ! (T13) goto L7
+ T14 = x + 1
+ p = T14
+ L8 :  T15 = a > b
+ If ! (T15) goto L9
+ T16 = y + 1
+ q = T16
+ L10 :  T17 = d >= c
+ If ! (T17) goto L11
+ T18 = v + g
+ c = T18
+ T19 = 6 < 5
+ T20 = T19
+ If ! (T20) goto L12
+ T21 = a * c
+ b = T21
+ L12 :  goto L10
+ L11 :  goto L8
+ L9 :  goto L6
+ L7 :  exit
