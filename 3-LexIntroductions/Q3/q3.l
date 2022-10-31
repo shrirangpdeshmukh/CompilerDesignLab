@@ -92,13 +92,15 @@ while               {yylval = (int)yytext[0]; return(LOOP);}
 .                   {printf("Error");}
 %%
 
-int yywrap(){return(1);}
+int yywrap() { return (1); }
 
-int main(){
+int main()
+{
     int token;
-    yyin=fopen("q3.txt","r");
-    while ((token=yylex())!=0) {
-        
+    yyin = fopen("q3.txt", "r");
+    while ((token = yylex()) != 0)
+    {
+
         printf("Token: %d,\tText: %s,\tValue: %d\n", token, yytext, yylval);
         yylval = -1;
     }

@@ -46,14 +46,15 @@ else        {return(ELSE);}
 .           {printf("ERROR: unknown token");}
 %%
 
-int yywrap(){return(1);}
+int yywrap() { return (1); }
 
-int main(){
+int main()
+{
     int token;
-    yyin=fopen("test2.txt","r");
-    while ((token=yylex())!=0) {
+    yyin = fopen("test2.txt", "r");
+    while ((token = yylex()) != 0)
+    {
         printf("Token: %d,\tText: %s,\tValue: %d\n", token, yytext, yylval);
         yylval = -1;
     }
-
 }

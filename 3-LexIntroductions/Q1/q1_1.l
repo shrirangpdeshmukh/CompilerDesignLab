@@ -11,11 +11,14 @@
 .*              {printf("Rejected\n");}
 %%
 
-int yywrap(){return(1);}
+int yywrap() { return (1); }
 
-int main(){
+int main()
+{
     int token;
-    yyin=fopen("test1_1.txt","r");
-    while ((token=yylex())!=0)
+    yyin = fopen("test1_1.txt", "r");
+    while ((token = yylex()) != 0)
+    {
         printf("%d %s \n", token, yytext);
+    }
 }
