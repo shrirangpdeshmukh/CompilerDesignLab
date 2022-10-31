@@ -1,16 +1,16 @@
 %{ 
 /* Definition section */
 	#include "calc.tab.h"
-	extern int yylval; 
 %}
 
 
-digits 		[0-9]+
+digit 		[0-9]
+number      ({digit}+)(\.{digit}+)?
 operators 	(\+|\*|\-|\/)
 /* Rule Section */
 %% 
-{digits} 	{ 
-				yylval=atoi(yytext); 
+{number} 	{ 
+				yylval.val=atof(yytext); 
 				return NUMBER; 
 		 	} 
 {operators} { return yytext[0]; } 
