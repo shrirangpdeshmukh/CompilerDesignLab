@@ -747,7 +747,6 @@ public:
             Token t = parser(i);
             if (t.getTokenType() == "Failure")
             {
-                // cout << "\033[2J\033[1;1H";
                 cout << endl;
                 cout << "Given Expression: " << expression << endl;
                 cout << "There is something wrong with the expression." << endl;

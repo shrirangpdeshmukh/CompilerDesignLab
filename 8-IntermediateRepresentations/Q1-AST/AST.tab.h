@@ -55,7 +55,7 @@ extern int yydebug;
 typedef union YYSTYPE
 {
 /* Line 2058 of yacc.c  */
-#line 12 ".\\AST.y"
+#line 12 "AST.y"
 
   node *Node;
   int Value;

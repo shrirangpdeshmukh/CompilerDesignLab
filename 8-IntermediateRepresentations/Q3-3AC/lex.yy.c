@@ -611,16 +611,16 @@ case 1:
 YY_RULE_SETUP
 #line 13 ".\\3AC.l"
 { 
-					yylval.Value = yytext[0];
-					return NUMBER; 
-		 		} 
+                  yylval.Value = yytext[0];
+                  return NUMBER; 
+		 		        } 
 	YY_BREAK
 case 2:
 YY_RULE_SETUP
 #line 17 ".\\3AC.l"
 {
-                    yylval.Value = yytext[0];
-                    return ID;
+                  yylval.Value = yytext[0];
+                  return ID;
                 }
 	YY_BREAK
 case 3:

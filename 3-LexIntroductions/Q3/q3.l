@@ -56,7 +56,7 @@ output_construct    print\({id}\)
 
 
 %%
-{ws}                {printf("Whitespace\n");}
+{ws}                {}
 {seperator}         {yylval = (int)yytext[0]; return (SEPERATOR);}
 main\(\)            {return (MAIN);}
 if                  {return(IF);}

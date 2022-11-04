@@ -18,9 +18,10 @@
   char Value;
 }
 
-%type<Value> G E T F ID NUMBER
+%type<Value> G E T F 
+%token<Value>ID NUMBER
 
-%token ID NUMBER
+
 
 /* Precedence section */
 %left '+' '-'

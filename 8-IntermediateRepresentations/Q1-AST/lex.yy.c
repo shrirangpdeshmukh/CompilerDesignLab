@@ -296,8 +296,8 @@ static yyconst int yy_ec[256] =
         1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
         1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
         1,    2,    1,    1,    1,    1,    4,    1,    1,    5,
-        5,    6,    7,    1,    8,    1,    9,   10,   10,   10,
-       10,   10,   10,   10,   10,   10,   10,    1,    1,    1,
+        5,    4,    4,    1,    4,    1,    4,    6,    6,    6,
+        6,    6,    6,    6,    6,    6,    6,    1,    1,    1,
         1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
         1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
         1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
@@ -322,35 +322,33 @@ static yyconst int yy_ec[256] =
         1,    1,    1,    1,    1
     } ;
 
-static yyconst int yy_meta[11] =
+static yyconst int yy_meta[7] =
     {   0,
-        1,    1,    1,    1,    1,    1,    1,    1,    1,    1
+        1,    1,    1,    1,    1,    2
     } ;
 
-static yyconst short int yy_base[12] =
+static yyconst short int yy_base[13] =
     {   0,
-        0,    0,   13,   14,   14,   14,   14,   14,    2,    1,
-       14
+        0,    0,    8,    9,    9,    9,    9,    9,    0,    0,
+        9,    5
     } ;
 
-static yyconst short int yy_def[12] =
+static yyconst short int yy_def[13] =
     {   0,
-       11,    1,   11,   11,   11,   11,   11,   11,   11,   11,
-        0
+       11,    1,   11,   11,   11,   11,   11,   11,   12,   12,
+        0,   11
     } ;
 
-static yyconst short int yy_nxt[25] =
+static yyconst short int yy_nxt[16] =
     {   0,
-        4,    5,    6,    7,    8,    7,    7,    7,    7,    9,
-       10,   10,   11,    3,   11,   11,   11,   11,   11,   11,
-       11,   11,   11,   11
+        4,    5,    6,    7,    8,    9,   10,   11,    3,   11,
+       11,   11,   11,   11,   11
     } ;
 
-static yyconst short int yy_chk[25] =
+static yyconst short int yy_chk[16] =
     {   0,
-        1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
-       10,    9,    3,   11,   11,   11,   11,   11,   11,   11,
-       11,   11,   11,   11
+        1,    1,    1,    1,    1,    1,   12,    3,   11,   11,
+       11,   11,   11,   11,   11
     } ;
 
 static yy_state_type yy_last_accepting_state;
@@ -364,13 +362,13 @@ static char *yy_last_accepting_cpos;
 #define YY_MORE_ADJ 0
 #define YY_RESTORE_YY_MORE_OFFSET
 char *yytext;
-#line 1 "AST.l"
+#line 1 ".\\AST.l"
 #define INITIAL 0
-#line 2 "AST.l"
+#line 2 ".\\AST.l"
 /* Definition section */
   #include "AST.tab.h"
 /* Rule Section */
-#line 374 "lex.yy.c"
+#line 372 "lex.yy.c"
 
 /* Macros after this point can all be overridden by user definitions in
  * section 1.
@@ -521,9 +519,9 @@ YY_DECL
 	register char *yy_cp, *yy_bp;
 	register int yy_act;
 
-#line 11 "AST.l"
+#line 11 ".\\AST.l"
 
-#line 527 "lex.yy.c"
+#line 525 "lex.yy.c"
 
 	if ( yy_init )
 		{
@@ -580,7 +578,7 @@ yy_match:
 			yy_current_state = yy_nxt[yy_base[yy_current_state] + (unsigned int) yy_c];
 			++yy_cp;
 			}
-		while ( yy_base[yy_current_state] != 14 );
+		while ( yy_base[yy_current_state] != 9 );
 
 yy_find_action:
 		yy_act = yy_accept[yy_current_state];
@@ -608,7 +606,7 @@ do_action:	/* This label is used only to access EOF actions. */
 
 case 1:
 YY_RULE_SETUP
-#line 12 "AST.l"
+#line 12 ".\\AST.l"
 { 
 					yylval.Value = atoi(yytext);
 					return NUMBER; 
@@ -616,30 +614,30 @@ YY_RULE_SETUP
 	YY_BREAK
 case 2:
 YY_RULE_SETUP
-#line 16 "AST.l"
+#line 16 ".\\AST.l"
 { return yytext[0]; } 
 	YY_BREAK
 case 3:
 YY_RULE_SETUP
-#line 17 "AST.l"
+#line 17 ".\\AST.l"
 { return yytext[0];}
 	YY_BREAK
 case 4:
 YY_RULE_SETUP
-#line 18 "AST.l"
+#line 18 ".\\AST.l"
 { return 0; }
 	YY_BREAK
 case 5:
 YY_RULE_SETUP
-#line 19 "AST.l"
+#line 19 ".\\AST.l"
 { printf("Invalid operator %s", yytext); exit(0); }
 	YY_BREAK
 case 6:
 YY_RULE_SETUP
-#line 20 "AST.l"
+#line 20 ".\\AST.l"
 ECHO;
 	YY_BREAK
-#line 643 "lex.yy.c"
+#line 641 "lex.yy.c"
 case YY_STATE_EOF(INITIAL):
 	yyterminate();
 
@@ -1525,7 +1523,7 @@ int main()
 	return 0;
 	}
 #endif
-#line 20 "AST.l"
+#line 20 ".\\AST.l"
 
 
 int yywrap() 
