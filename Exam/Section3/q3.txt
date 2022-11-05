@@ -1,0 +1,24 @@
+main()
+{
+
+    int a := 6 + 6;
+    int rec;
+    bool c := false;
+    in(r);
+    out(k);
+    if (a > b || false)
+    {
+        b := a;
+        int k := 7 + 9;
+    }
+    else
+    {
+        int ZZ := 66 + 99;
+        bool c := true || false;
+    }
+
+    while (D > 0)
+    {
+        bool v := true;
+    }
+}
