@@ -11,6 +11,8 @@
 /* Precedence section */
 %left '+' '-'
 %left '*' '/'
+%left '%'
+%left '(' ')'
 
 %start G
 
@@ -35,9 +37,18 @@ T:  T'*'F {$$ = $1 * $3;}
             $$ = $1 / $3;
             
           }
+| T'%'F   {
+            if (!($3 > 0) ) {
+               printf("Modulus number should be positive!");
+               flag = 1;
+               return -1;
+            }
+            $$ = $1 % $3;
+          }
 |   F     {$$ = $1;}; 
 
-F: NUMBER {$$ = $1;};
+F: NUMBER {$$ = $1;} 
+| '('E')' {$$ = $2;};
 %%
 
 
