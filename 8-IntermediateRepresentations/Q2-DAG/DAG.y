@@ -12,7 +12,7 @@
   void printResult(node *root);
   int checkIfExpressionExists(char expression[100]);
   void addToDAG(node *newNode);
-  node *processOperationNode(char expression[100], char type, node *left, node *right);
+  node *processOperationNode(char expression[100], int isOp, char type, node *left, node *right);
   
   node* dag[100];
   int currentIndex = 0;
@@ -50,7 +50,7 @@ E: E'+'T {
             char temp[100];
             sprintf(temp,"%s + %s", $1->expression, $3->expression);
         
-            node *PlusNode = processOperationNode(temp, '+', $1, $3);
+            node *PlusNode = processOperationNode(temp, 1, '+', $1, $3);
             $$ = PlusNode; 
             
          }
@@ -58,7 +58,7 @@ E: E'+'T {
             char temp[100];
             sprintf(temp,"%s - %s", $1->expression, $3->expression);
             
-            node *MinusNode = processOperationNode(temp, '-', $1, $3);
+            node *MinusNode = processOperationNode(temp, 1, '-', $1, $3);
             $$ = MinusNode; 
             
          }
@@ -68,7 +68,7 @@ T: T'*'F {
             char temp[100];
             sprintf(temp,"%s * %s", $1->expression, $3->expression);
             
-            node *MulNode = processOperationNode(temp, '*', $1, $3);
+            node *MulNode = processOperationNode(temp, 1, '*', $1, $3);
             $$ = MulNode; 
             
          }
@@ -76,7 +76,7 @@ T: T'*'F {
             char temp[100];
             sprintf(temp,"%s / %s", $1->expression, $3->expression);
             
-            node *DivNode = processOperationNode(temp, '/', $1, $3);
+            node *DivNode = processOperationNode(temp, 1, '/', $1, $3);
             $$ = DivNode; 
             
          }
@@ -84,7 +84,7 @@ T: T'*'F {
             char temp[100];
             sprintf(temp,"%s %% %s", $1->expression, $3->expression);
             
-            node *ModNode = processOperationNode(temp, '%', $1, $3);
+            node *ModNode = processOperationNode(temp, 1, '%', $1, $3);
             $$ = ModNode; 
             
          }
@@ -92,10 +92,9 @@ T: T'*'F {
 
 F: ID   { 
             char temp[100];
-            sprintf(temp,"%c",$1);
+            sprintf(temp,"%c", $1);
             
-            node *IDNode = createNode(currentIndex, 0, $1, temp, NULL, NULL); 
-            addToDAG(IDNode);
+            node *IDNode = processOperationNode(temp, 0, $1, NULL, NULL);
             $$ = IDNode; 
             
         }
@@ -166,7 +165,7 @@ void addToDAG(node *newNode)
     currentIndex++;
 }
 
-node *processOperationNode(char expression[100], char type, node *left, node *right)
+node *processOperationNode(char expression[100], int isOp, char type, node *left, node *right)
 {
 
     int index = checkIfExpressionExists(expression);
@@ -177,7 +176,7 @@ node *processOperationNode(char expression[100], char type, node *left, node *ri
     }
     else
     {
-        node *newnode = createNode(currentIndex, 1, type, expression, left, right);
+        node *newnode = createNode(currentIndex, isOp, type, expression, left, right);
         addToDAG(newnode);
         return newnode;
     }
